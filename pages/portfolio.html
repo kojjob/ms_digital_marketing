@@ -3,245 +3,852 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our digital marketing case studies and success stories. See how we've helped businesses achieve remarkable growth online.">
+    <meta name="keywords" content="digital marketing portfolio, case studies, marketing success stories, client results, digital marketing projects">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Portfolio - MS Digital Marketing Agency">
+    <meta property="og:description" content="See how we've helped brands achieve remarkable results through innovative digital marketing solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/portfolio.html">
+    <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
     <title>Portfolio - MS Digital Marketing Agency</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind-config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .portfolio-item {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .portfolio-image {
-            height: 250px;
-            background-color: #e0e0e0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-content {
-            padding: 20px;
-        }
-        
-        .portfolio-content h3 {
-            margin-bottom: 10px;
-        }
-        
-        .portfolio-content p {
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .industries-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .industry-tag {
-            background: #0077cc;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 5px;
-            display: inline-block;
-        }
-    </style>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MS Digital Marketing Agency</h1>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+    
+    <!-- Header with glass morphism effect -->    
+    <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->                
+                <div class="logo flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <span class="bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->                
+                <nav class="hidden md:block" aria-label="Main Navigation">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="../index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="about.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                About Us
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="portfolio.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors text-primary-600 dark:text-primary-400">
+                                Portfolio
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="blog.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Blog
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="faq.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                FAQ
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->                    
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Social Icons - Only show on desktop -->                    
+                    <div class="hidden md:flex items-center mr-4">
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <!-- Contact Button - Only show on desktop -->                    
+                    <a href="contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                        Get in Touch
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+            
+            <!-- Mobile Menu -->            
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-200" 
+                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-end="opacity-100 translate-y-0" 
+                x-transition:leave="transition ease-in duration-150" 
+                x-transition:leave-start="opacity-100 translate-y-0" 
+                x-transition:leave-end="opacity-0 -translate-y-4" 
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">About Us</a></li>
+                        <li><a href="services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="portfolio.html" class="block px-3 py-2 rounded-md bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-medium">Portfolio</a></li>
+                        <li><a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Blog</a></li>
+                        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">FAQ</a></li>
+                        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    
+    <!-- Accessible skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
+        Skip to content
+    </a>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Our Portfolio</h1>
+    <section class="relative py-20 bg-gradient-to-r from-primary-600 to-primary-500 text-white overflow-hidden" id="main-content">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Our Portfolio</h1>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto">
+                    Real results from our digital marketing strategies across various industries
+                </p>
+            </div>
         </div>
     </section>
 
-    <section class="featured-projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="../images/portfolio/project1.svg" alt="Digital Transformation Project">
+    <section class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 dark:bg-primary-900/20 rounded-full -z-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-100/50 dark:bg-primary-900/20 rounded-full -z-10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-4">
+            <!-- Section header -->
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="inline-block py-1 px-3 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                    Success Stories
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display dark:text-white">Featured Projects</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    Explore how we've helped brands transform their digital presence and achieve outstanding growth
+                </p>
+            </div>
+            
+            <!-- Portfolio grid with modern cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Project image with overlay -->
+                    <div class="relative overflow-hidden h-64">
+                        <img src="../images/portfolio/project1.svg" alt="Digital Transformation Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <!-- Category tag -->
+                        <div class="absolute top-4 right-4 bg-primary-600/90 text-white text-xs font-bold py-1 px-3 rounded-full">
+                            Website Redesign
+                        </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Revamping a Legacy Brand for the Digital Age</h3>
-                        <p>We helped [Client Name] transform their outdated digital presence into a modern, engaging online platform—resulting in a 200% increase in engagement.</p>
-                        <a href="#" class="cta-button">View Case Study</a>
+                    
+                    <!-- Content section -->
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">Revamping a Legacy Brand for the Digital Age</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">We helped TechPro Industries transform their outdated digital presence into a modern, engaging online platform—resulting in a 200% increase in engagement.</p>
+                        
+                        <!-- Stats badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                200% Engagement
+                            </span>
+                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                150% Traffic
+                            </span>
+                        </div>
+                        
+                        <a href="case-studies/website-redesign.html" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors group-hover:translate-x-1 transform duration-300">
+                            View Case Study
+                            <svg class="ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="../images/portfolio/project2.svg" alt="PPC Campaign">
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Project image with overlay -->
+                    <div class="relative overflow-hidden h-64">
+                        <img src="../images/portfolio/project2.svg" alt="PPC Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <!-- Category tag -->
+                        <div class="absolute top-4 right-4 bg-primary-600/90 text-white text-xs font-bold py-1 px-3 rounded-full">
+                            PPC Advertising
+                        </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Scaling Growth with Data-Driven PPC Campaigns</h3>
-                        <p>Our targeted PPC campaigns delivered a 300% ROI for [Client Name] by optimizing ad spending and conversion strategies.</p>
-                        <a href="#" class="cta-button">View Case Study</a>
+                    
+                    <!-- Content section -->
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">Scaling Growth with Data-Driven PPC Campaigns</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our targeted PPC campaigns delivered a 300% ROI for FashionHub by optimizing ad spending and conversion strategies.</p>
+                        
+                        <!-- Stats badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                300% ROI
+                            </span>
+                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                                -42% CPC
+                            </span>
+                        </div>
+                        
+                        <a href="case-studies/ppc-campaign.html" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors group-hover:translate-x-1 transform duration-300">
+                            View Case Study
+                            <svg class="ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="../images/portfolio/project3.svg" alt="Social Media Campaign">
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Project image with overlay -->
+                    <div class="relative overflow-hidden h-64">
+                        <img src="../images/portfolio/project3.svg" alt="Social Media Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <!-- Category tag -->
+                        <div class="absolute top-4 right-4 bg-primary-600/90 text-white text-xs font-bold py-1 px-3 rounded-full">
+                            Social Media
+                        </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Building Brand Awareness Through Social Media</h3>
-                        <p>We created a comprehensive social media strategy that increased [Client Name]'s follower count by 500% and engagement by 350%.</p>
-                        <a href="#" class="cta-button">View Case Study</a>
+                    
+                    <!-- Content section -->
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">Building Brand Awareness Through Social Media</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">We created a comprehensive social media strategy that increased Glow Beauty's follower count by 500% and engagement by 350%.</p>
+                        
+                        <!-- Stats badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                500% Followers
+                            </span>
+                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                350% Engagement
+                            </span>
+                        </div>
+                        
+                        <div class="inline-flex items-center">
+                            <span class="text-primary-600 dark:text-primary-400 font-medium mr-2">Case Study Coming Soon</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-medium py-1 px-2 rounded-full">
+                                New
+                            </span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="../images/portfolio/project4.svg" alt="SEO Project">
+                <!-- Project 4 -->
+                <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Project image with overlay -->
+                    <div class="relative overflow-hidden h-64">
+                        <img src="../images/portfolio/project4.svg" alt="SEO Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <!-- Category tag -->
+                        <div class="absolute top-4 right-4 bg-primary-600/90 text-white text-xs font-bold py-1 px-3 rounded-full">
+                            SEO Optimization
+                        </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Dominating Search Results with Strategic SEO</h3>
-                        <p>Our SEO optimization helped [Client Name] achieve first-page rankings for over 50 competitive keywords, increasing organic traffic by 200%.</p>
-                        <a href="#" class="cta-button">View Case Study</a>
+                    
+                    <!-- Content section -->
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">Dominating Search Results with Strategic SEO</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Our SEO optimization helped HealthTech achieve first-page rankings for over 50 competitive keywords, increasing organic traffic by 200%.</p>
+                        
+                        <!-- Stats badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                200% Organic Traffic
+                            </span>
+                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 text-xs font-medium py-1 px-2 rounded-full flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                50+ Keywords Ranked
+                            </span>
+                        </div>
+                        
+                        <div class="inline-flex items-center">
+                            <span class="text-primary-600 dark:text-primary-400 font-medium mr-2">Case Study Coming Soon</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-medium py-1 px-2 rounded-full">
+                                New
+                            </span>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Load more button -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <div class="space-y-3">
+                    <button class="px-6 py-3 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 font-bold rounded-lg shadow-md hover:shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300">
+                        <span>Load More Projects</span>
+                        <i class="fas fa-angle-down ml-2"></i>
+                    </button>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm italic">More case studies are being added regularly. Check back soon!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="client-testimonials">
-        <div class="container">
-            <h2>Client Testimonials</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>"MS Digital Marketing Agency delivered beyond our expectations – their strategy doubled our website traffic and boosted sales."</p>
-                    <h4>- [Client Name], Company A</h4>
+    <section class="py-24 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00ek0yNCAzMmMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAx,Ljc5IDQgNCA0IDQtMS43OSA0LTR6bTI0IDBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+');"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section header -->
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="inline-block py-1 px-3 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                    Client Feedback
                 </div>
-                <div class="testimonial">
-                    <p>"Working with MS Digital Marketing Agency transformed our online presence. They understand our brand and have helped us achieve remarkable growth."</p>
-                    <h4>- [Client Name], Company B</h4>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display dark:text-white">Client Testimonials</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    Hear directly from our clients about their experience working with us
+                </p>
+            </div>
+            
+            <!-- Testimonials grid with modern cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 relative border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Quote icon -->
+                    <div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
+                        <i class="fas fa-quote-left text-xs"></i>
+                    </div>
+                    
+                    <!-- Rating stars -->
+                    <div class="flex mb-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <!-- Testimonial content -->
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic">
+                        "MS Digital Marketing Agency delivered beyond our expectations – their strategy doubled our website traffic and boosted sales. The team's dedication and expertise was evident throughout the project."
+                    </p>
+                    
+                    <!-- Client info -->
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold mr-3">
+                            CN
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">[Client Name]</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">CEO, Company A</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"The ROI we've seen from MS Digital Marketing Agency's campaigns has been outstanding. They're truly experts in their field."</p>
-                    <h4>- [Client Name], Company C</h4>
+                
+                <!-- Testimonial 2 -->
+                <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 relative border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Quote icon -->
+                    <div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
+                        <i class="fas fa-quote-left text-xs"></i>
+                    </div>
+                    
+                    <!-- Rating stars -->
+                    <div class="flex mb-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <!-- Testimonial content -->
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic">
+                        "Working with MS Digital Marketing Agency transformed our online presence. They understand our brand and have helped us achieve remarkable growth in a highly competitive market."
+                    </p>
+                    
+                    <!-- Client info -->
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold mr-3">
+                            CN
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">[Client Name]</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">Marketing Director, Company B</p>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 relative border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Quote icon -->
+                    <div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
+                        <i class="fas fa-quote-left text-xs"></i>
+                    </div>
+                    
+                    <!-- Rating stars -->
+                    <div class="flex mb-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    
+                    <!-- Testimonial content -->
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic">
+                        "The ROI we've seen from MS Digital Marketing Agency's campaigns has been outstanding. They're truly experts in their field and I would recommend them to any business looking to grow online."
+                    </p>
+                    
+                    <!-- Client info -->
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold mr-3">
+                            CN
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">[Client Name]</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">VP of Sales, Company C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More testimonials button -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                    <span>View more testimonials</span>
+                    <svg class="ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="industries-served">
-        <div class="container">
-            <h2>Industries We Serve</h2>
-            <div class="industries-list">
-                <span class="industry-tag">Retail</span>
-                <span class="industry-tag">Technology</span>
-                <span class="industry-tag">Healthcare</span>
-                <span class="industry-tag">Education</span>
-                <span class="industry-tag">Finance</span>
-                <span class="industry-tag">Real Estate</span>
-                <span class="industry-tag">Hospitality</span>
-                <span class="industry-tag">Non-Profit</span>
-                <span class="industry-tag">Entertainment</span>
-                <span class="industry-tag">Manufacturing</span>
+    <section class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-gray-50 to-transparent dark:from-gray-800/50 dark:to-transparent -z-10"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-primary-200/20 dark:bg-primary-800/10 rounded-full -z-10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section header -->
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="inline-block py-1 px-3 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                    Our Expertise
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display dark:text-white">Industries We Serve</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    We have experience creating successful digital strategies across diverse industries
+                </p>
+            </div>
+            
+            <!-- Industries grid with icons -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8">
+                <!-- Industry 1: Retail -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Retail</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">E-commerce & Stores</p>
+                </div>
+                
+                <!-- Industry 2: Technology -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Technology</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">SaaS & IT Services</p>
+                </div>
+                
+                <!-- Industry 3: Healthcare -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Healthcare</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Medical & Wellness</p>
+                </div>
+                
+                <!-- Industry 4: Education -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Education</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Schools & E-learning</p>
+                </div>
+                
+                <!-- Industry 5: Finance -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Finance</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Banking & Insurance</p>
+                </div>
+                
+                <!-- Industry 6: Real Estate -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Real Estate</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Property & Development</p>
+                </div>
+                
+                <!-- Industry 7: Hospitality -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Hospitality</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Hotels & Restaurants</p>
+                </div>
+                
+                <!-- Industry 8: Non-Profit -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Non-Profit</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Charities & Foundations</p>
+                </div>
+                
+                <!-- Industry 9: Entertainment -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Entertainment</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Media & Events</p>
+                </div>
+                
+                <!-- Industry 10: Manufacturing -->
+                <div class="bg-white dark:bg-gray-800 p-6 text-center rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group" data-aos="fade-up" data-aos-delay="550">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Manufacturing</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Production & Supply</p>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="text-center mt-16" data-aos="fade-up">
+                <a href="contact.html" class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-rocket mr-2"></i>
+                    <span>Start Your Project Today</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>MS Digital Marketing</h3>
-                    <p>Transform your digital presence with our innovative marketing solutions.</p>
+    <!-- Call to action section before footer -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-primary-500 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0 md:mr-8 text-center md:text-left" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Ready to Transform Your Digital Presence?</h2>
+                    <p class="text-white/80 text-lg max-w-xl">Let's work together to develop a winning digital strategy that drives real business results.</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div data-aos="fade-left">
+                    <a href="contact.html" class="inline-flex items-center bg-white text-primary-600 font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600">
+                        <span class="mr-2">Get Started Today</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                <!-- Company info column -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold py-1 px-2 rounded-md mr-2">
+                            MS
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Digital Marketing</h3>
+                    </div>
+                    <p class="mb-6 text-gray-300 max-w-sm">
+                        Transform your digital presence with our innovative marketing solutions. We help businesses grow through data-driven strategies and creative execution.
+                    </p>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links columns -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Pages
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@msdigitalmarketing.com</p>
-                    <p>Phone: +1 (XXX) XXX-XXXX</p>
-                    <p>Address: [Insert Address Here]</p>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Blog</a></li>
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>FAQ</a></li>
+                        <li><a href="../legal/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Privacy Policy</a></li>
+                        <li><a href="../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
+                    </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                
+                <!-- Contact info column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email:</p>
+                                <a href="mailto:contact@msdigitalmarketing.com" class="text-white hover:text-primary-400 transition-colors">contact@msdigitalmarketing.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-phone-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Phone:</p>
+                                <a href="tel:+1XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Address:</p>
+                                <p class="text-white">[Insert Address Here]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent flex-grow text-white">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-r-lg transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
-                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+            
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="../legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="../legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
 
+        <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
     <script src="../js/main.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Check for dark mode preference
+        document.addEventListener('alpine:init', () => {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('body').__x.$data.darkMode = true;
+            }
+        });
+        
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
