@@ -1,4 +1,47 @@
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100%" height="100%" fill="#e0e0e0"/>
-    <text x="50%" y="50%" font-family="Arial" font-size="36" fill="#555" text-anchor="middle">Portfolio Project 4</text>
-  </svg>
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad4)"/>
+  
+  <!-- Search engine results mockup -->
+  <rect x="150" y="120" width="500" height="50" rx="5" ry="5" fill="white" fill-opacity="0.2" stroke="white" stroke-width="2"/>
+  <circle cx="180" cy="145" r="15" fill="white" fill-opacity="0.5"/>
+  <rect x="210" y="135" width="400" height="20" rx="3" ry="3" fill="white" fill-opacity="0.5"/>
+  
+  <!-- Search results -->
+  <rect x="150" y="190" width="500" height="70" rx="5" ry="5" fill="white" fill-opacity="0.15"/>
+  <rect x="170" y="200" width="300" height="20" rx="3" ry="3" fill="white" fill-opacity="0.3"/>
+  <rect x="170" y="230" width="460" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  <rect x="170" y="245" width="420" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  
+  <rect x="150" y="270" width="500" height="70" rx="5" ry="5" fill="white" fill-opacity="0.15"/>
+  <rect x="170" y="280" width="320" height="20" rx="3" ry="3" fill="white" fill-opacity="0.3"/>
+  <rect x="170" y="310" width="460" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  <rect x="170" y="325" width="410" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  
+  <rect x="150" y="350" width="500" height="70" rx="5" ry="5" fill="white" fill-opacity="0.15"/>
+  <rect x="170" y="360" width="280" height="20" rx="3" ry="3" fill="white" fill-opacity="0.3"/>
+  <rect x="170" y="390" width="460" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  <rect x="170" y="405" width="430" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  
+  <rect x="150" y="430" width="500" height="70" rx="5" ry="5" fill="white" fill-opacity="0.15"/>
+  <rect x="170" y="440" width="310" height="20" rx="3" ry="3" fill="white" fill-opacity="0.3"/>
+  <rect x="170" y="470" width="460" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  <rect x="170" y="485" width="400" height="10" rx="2" ry="2" fill="white" fill-opacity="0.2"/>
+  
+  <!-- Graph overlay showing rankings -->
+  <polyline points="700,450 650,380 600,400 550,320 500,350 450,270" stroke="white" stroke-width="3" fill="none"/>
+  <circle cx="700" cy="450" r="6" fill="white"/>
+  <circle cx="650" cy="380" r="6" fill="white"/>
+  <circle cx="600" cy="400" r="6" fill="white"/>
+  <circle cx="550" cy="320" r="6" fill="white"/>
+  <circle cx="500" cy="350" r="6" fill="white"/>
+  <circle cx="450" cy="270" r="6" fill="white"/>
+  
+  <text x="400" y="80" font-family="Arial" font-size="36" fill="white" text-anchor="middle" font-weight="bold">SEO Optimization</text>
+  <text x="400" y="530" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Dominating Search Results</text>
+</svg>

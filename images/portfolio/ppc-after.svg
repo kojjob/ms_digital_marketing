@@ -1,0 +1,65 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Optimized PPC dashboard -->
+  <defs>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  
+  <!-- Dashboard header -->
+  <rect x="0" y="0" width="800" height="70" fill="url(#header-grad)"/>
+  <rect x="50" y="20" width="200" height="30" rx="5" ry="5" fill="white" fill-opacity="0.9"/>
+  <rect x="600" y="20" width="150" height="30" rx="5" ry="5" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Improved performance metrics -->
+  <rect x="50" y="100" width="220" height="140" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="70" y="120" width="120" height="25" rx="5" ry="5" fill="#f0fdfa"/>
+  <text x="160" y="170" font-family="Arial" font-size="32" fill="#059669" text-anchor="middle" font-weight="bold">3.2%</text>
+  <text x="160" y="200" font-family="Arial" font-size="18" fill="#555555" text-anchor="middle">CTR</text>
+  
+  <rect x="290" y="100" width="220" height="140" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="310" y="120" width="120" height="25" rx="5" ry="5" fill="#f0fdfa"/>
+  <text x="400" y="170" font-family="Arial" font-size="32" fill="#059669" text-anchor="middle" font-weight="bold">$17.80</text>
+  <text x="400" y="200" font-family="Arial" font-size="18" fill="#555555" text-anchor="middle">CPA</text>
+  
+  <rect x="530" y="100" width="220" height="140" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="550" y="120" width="120" height="25" rx="5" ry="5" fill="#f0fdfa"/>
+  <text x="640" y="170" font-family="Arial" font-size="32" fill="#059669" text-anchor="middle" font-weight="bold">4.1%</text>
+  <text x="640" y="200" font-family="Arial" font-size="18" fill="#555555" text-anchor="middle">Conv. Rate</text>
+  
+  <!-- Upward trend chart -->
+  <rect x="50" y="260" width="700" height="270" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="70" y="280" width="120" height="25" rx="5" ry="5" fill="#f0fdfa"/>
+  
+  <!-- Improved performance trend line -->
+  <polyline points="100,450 200,420 300,380 400,350 500,320 600,290 700,270" stroke="#10b981" stroke-width="3" fill="none"/>
+  <circle cx="100" cy="450" r="5" fill="#10b981"/>
+  <circle cx="200" cy="420" r="5" fill="#10b981"/>
+  <circle cx="300" cy="380" r="5" fill="#10b981"/>
+  <circle cx="400" cy="350" r="5" fill="#10b981"/>
+  <circle cx="500" cy="320" r="5" fill="#10b981"/>
+  <circle cx="600" cy="290" r="5" fill="#10b981"/>
+  <circle cx="700" cy="270" r="5" fill="#10b981"/>
+  
+  <!-- Target benchmark -->
+  <line x1="100" y1="350" x2="700" y2="350" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+  <rect x="650" y="330" width="40" height="20" rx="3" ry="3" fill="#f1f5f9"/>
+  <text x="670" y="345" font-family="Arial" font-size="12" fill="#64748b" text-anchor="middle">Goal</text>
+  
+  <!-- X and Y axis -->
+  <line x1="100" y1="480" x2="700" y2="480" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="100" y1="270" x2="100" y2="480" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Campaign breakdown with optimal allocation -->
+  <rect x="50" y="550" width="700" height="40" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="70" y="560" width="150" height="20" rx="5" ry="5" fill="#f0fdfa"/>
+  <rect x="240" y="560" width="150" height="20" rx="5" ry="5" fill="#f0fdfa"/>
+  <rect x="410" y="560" width="150" height="20" rx="5" ry="5" fill="#f0fdfa"/>
+  <rect x="580" y="560" width="150" height="20" rx="5" ry="5" fill="#f0fdfa"/>
+  
+  <!-- Text indicating optimized performance -->
+  <text x="400" y="40" font-family="Arial" font-size="24" fill="white" text-anchor="middle" font-weight="bold">Optimized PPC Campaign</text>
+</svg>

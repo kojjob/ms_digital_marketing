@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how we transformed a legacy brand's digital presence with a comprehensive website redesign, resulting in a 200% increase in engagement and 150% increase in traffic.">
+    <meta name="keywords" content="website redesign, case study, digital transformation, UI/UX design, conversion optimization, brand refresh">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Website Redesign Case Study - MS Digital Marketing Agency">
+    <meta property="og:description" content="See how our strategic redesign increased engagement by 200% and traffic by 150% for a legacy brand.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/case-studies/website-redesign.html">
+    <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
+    <title>Website Redesign Case Study - MS Digital Marketing Agency</title>
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/tailwind-config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+    
+    <!-- Header with glass morphism effect -->    
+    <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->                
+                <div class="logo flex items-center">
+                    <a href="../../index.html" class="flex items-center">
+                        <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->                
+                <nav class="hidden md:block" aria-label="Main Navigation">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="../../index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../about.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                About Us
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../portfolio.html" class="block px-3 py-2 text-primary-600 dark:text-primary-400 font-medium transition-colors border-b-2 border-primary-600 dark:border-primary-400">
+                                Portfolio
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../blog.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Blog
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../faq.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                FAQ
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->                    
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Social Icons - Only show on desktop -->                    
+                    <div class="hidden md:flex items-center mr-4">
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <!-- Contact Button - Only show on desktop -->                    
+                    <a href="../contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                        Get in Touch
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->            
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-200" 
+                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-end="opacity-100 translate-y-0" 
+                x-transition:leave="transition ease-in duration-150" 
+                x-transition:leave-start="opacity-100 translate-y-0" 
+                x-transition:leave-end="opacity-0 -translate-y-4" 
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="../about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">About Us</a></li>
+                        <li><a href="../services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="../portfolio.html" class="block px-3 py-2 rounded-md bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-medium">Portfolio</a></li>
+                        <li><a href="../blog.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Blog</a></li>
+                        <li><a href="../faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">FAQ</a></li>
+                        <li><a href="../contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Accessible skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
+        Skip to content
+    </a>
+
+    <!-- Hero section with the case study title and summary -->
+    <section class="relative py-32 md:py-36 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../images/portfolio/project1.svg');" id="main-content">
+        <div class="absolute inset-0 bg-primary-600/20 mix-blend-multiply"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-8 lg:col-span-7">
+                    <!-- Back to portfolio link -->
+                    <a href="../portfolio.html" class="inline-flex items-center text-white/80 hover:text-white mb-6 group transition-all duration-300">
+                        <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        Back to Portfolio
+                    </a>
+                    
+                    <!-- Category tag -->
+                    <div class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-600 text-white text-sm font-semibold">
+                        Website Redesign
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display" data-aos="fade-up">
+                        Revamping a Legacy Brand for the Digital Age
+                    </h1>
+                    
+                    <p class="text-xl text-white/80 max-w-3xl mb-8" data-aos="fade-up" data-aos-delay="100">
+                        We helped TechPro Industries transform their outdated digital presence into a modern, engaging online platform—resulting in a 200% increase in engagement and a 150% boost in organic traffic.
+                    </p>
+                    
+                    <!-- Stats badges -->
+                    <div class="flex flex-wrap gap-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg">
+                            <div class="text-2xl font-bold text-white">200%</div>
+                            <div class="text-white/70 text-sm">Engagement Increase</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg">
+                            <div class="text-2xl font-bold text-white">150%</div>
+                            <div class="text-white/70 text-sm">Traffic Growth</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg">
+                            <div class="text-2xl font-bold text-white">3X</div>
+                            <div class="text-white/70 text-sm">Lead Generation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content area with case study details -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Main content column -->
+                <div class="lg:col-span-8">
+                    <!-- Client background -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">Client Background</h2>
+                        <div class="prose dark:prose-invert max-w-none lg:prose-lg">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                TechPro Industries is a leader in enterprise software solutions with 20+ years of industry experience. Despite their excellent product offerings and stellar client portfolio, their digital presence was outdated and failed to reflect their innovative nature—with a website that was built in 2010 and hadn't been substantially updated since.
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                The company approached us with concerns about low website engagement metrics, poor lead generation, and a disconnect between their cutting-edge products and dated online image.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Challenge section -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">The Challenge</h2>
+                        <div class="prose dark:prose-invert max-w-none lg:prose-lg">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                TechPro faced multiple digital challenges that were hindering business growth:
+                            </p>
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li>An outdated website with poor mobile responsiveness (68% of visitors were on mobile devices)</li>
+                                <li>Confusing navigation structure with high bounce rates (78% on key product pages)</li>
+                                <li>Slow page load times (average of 8.2 seconds) impacting SEO performance</li>
+                                <li>Poor conversion pathway with complex lead generation forms (3.5% conversion rate)</li>
+                                <li>Disconnected brand messaging across digital touchpoints</li>
+                                <li>Limited data visualization and product demonstration capabilities</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Before and after comparison -->
+                        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="relative bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                                <div class="absolute top-3 left-3 bg-red-500/80 text-white text-xs font-bold py-1 px-2 rounded">
+                                    BEFORE
+                                </div>
+                                <img src="../../images/portfolio/project1-before.svg" alt="Website before redesign" class="w-full h-auto rounded border border-gray-200 dark:border-gray-700 mt-6">
+                                <div class="mt-3 text-sm text-gray-500 dark:text-gray-400 italic text-center">
+                                    The old website with outdated design and complex navigation
+                                </div>
+                            </div>
+                            <div class="relative bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                                <div class="absolute top-3 left-3 bg-green-500/80 text-white text-xs font-bold py-1 px-2 rounded">
+                                    AFTER
+                                </div>
+                                <img src="../../images/portfolio/project1-after.svg" alt="Website after redesign" class="w-full h-auto rounded border border-gray-200 dark:border-gray-700 mt-6">
+                                <div class="mt-3 text-sm text-gray-500 dark:text-gray-400 italic text-center">
+                                    The redesigned website with modern UI and intuitive UX
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Solution section -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">Our Solution</h2>
+                        <div class="prose dark:prose-invert max-w-none lg:prose-lg">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                We developed a comprehensive digital transformation strategy that included:
+                            </p>
+                            
+                            <!-- Solution points -->
+                            <div class="mt-8 space-y-6">
+                                <!-- Solution 1 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                                            <i class="fas fa-paint-brush text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 dark:text-white">Complete UI/UX Redesign</h3>
+                                        <p class="text-gray-600 dark:text-gray-300">We rebuilt the entire user experience from the ground up, starting with extensive user research and journey mapping. The new design featured a clean, modern aesthetic with intuitive navigation and strong visual hierarchy.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Solution 2 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-xl bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center text-secondary-600 dark:text-secondary-400">
+                                            <i class="fas fa-mobile-alt text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 dark:text-white">Mobile-First Architecture</h3>
+                                        <p class="text-gray-600 dark:text-gray-300">Recognizing that the majority of users were accessing the site via mobile devices, we implemented a fully responsive design that prioritized mobile experience while maintaining robust desktop functionality.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Solution 3 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                                            <i class="fas fa-tachometer-alt text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 dark:text-white">Performance Optimization</h3>
+                                        <p class="text-gray-600 dark:text-gray-300">We reduced page load times from 8.2 seconds to under 2 seconds through image optimization, code minification, browser caching, and strategic resource loading. This dramatically improved user experience and SEO rankings.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Solution 4 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-xl bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center text-secondary-600 dark:text-secondary-400">
+                                            <i class="fas fa-bullseye text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 dark:text-white">Conversion-Focused Design</h3>
+                                        <p class="text-gray-600 dark:text-gray-300">We implemented clear, intuitive conversion pathways, with simplified forms and strategically placed CTAs. Each page was optimized to guide users toward key conversion points with minimal friction.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Solution 5 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                                            <i class="fas fa-chart-bar text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2 dark:text-white">Interactive Product Showcases</h3>
+                                        <p class="text-gray-600 dark:text-gray-300">We created interactive product demonstrations and data visualizations that allowed potential clients to experience TechPro's solutions directly, rather than just reading about them.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Implementation process -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">Implementation Process</h2>
+                        
+                        <div class="relative overflow-hidden">
+                            <!-- Timeline markers -->
+                            <div class="absolute left-8 top-0 bottom-0 w-1 bg-primary-200 dark:bg-primary-800 z-0"></div>
+                            
+                            <!-- Timeline points -->
+                            <div class="space-y-12 relative z-10">
+                                <!-- Phase 1 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-8">
+                                        <div class="w-16 h-16 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                                            01
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-3 dark:text-white">Discovery & Research</h3>
+                                        <div class="text-gray-600 dark:text-gray-300 space-y-3">
+                                            <p>We conducted comprehensive research including:</p>
+                                            <ul class="list-disc pl-6 space-y-1">
+                                                <li>User interviews with current customers and prospects</li>
+                                                <li>Competitor analysis of 12 industry leaders</li>
+                                                <li>Heatmap analysis of current website usage patterns</li>
+                                                <li>Technical performance audit and SEO analysis</li>
+                                            </ul>
+                                            <p>This phase lasted 3 weeks and resulted in a detailed strategy document.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phase 2 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-8">
+                                        <div class="w-16 h-16 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                                            02
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-3 dark:text-white">Design & Prototyping</h3>
+                                        <div class="text-gray-600 dark:text-gray-300 space-y-3">
+                                            <p>Our design team created:</p>
+                                            <ul class="list-disc pl-6 space-y-1">
+                                                <li>User flows and wireframes for primary conversion pathways</li>
+                                                <li>Visual design system with brand-aligned components</li>
+                                                <li>Interactive prototypes for key user journeys</li>
+                                                <li>A/B test variants for conversion elements</li>
+                                            </ul>
+                                            <p>All designs underwent user testing with 24 participants before finalization.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phase 3 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-8">
+                                        <div class="w-16 h-16 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                                            03
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-3 dark:text-white">Development</h3>
+                                        <div class="text-gray-600 dark:text-gray-300 space-y-3">
+                                            <p>Our development team built the new site using:</p>
+                                            <ul class="list-disc pl-6 space-y-1">
+                                                <li>Modern tech stack with React for frontend interactivity</li>
+                                                <li>Headless CMS implementation for content flexibility</li>
+                                                <li>Custom API integrations with TechPro's product ecosystem</li>
+                                                <li>Advanced analytics framework for conversion tracking</li>
+                                            </ul>
+                                            <p>Development followed an agile methodology with biweekly demos to the client.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phase 4 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-8">
+                                        <div class="w-16 h-16 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                                            04
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-3 dark:text-white">Testing & Launch</h3>
+                                        <div class="text-gray-600 dark:text-gray-300 space-y-3">
+                                            <p>Before full launch, we conducted:</p>
+                                            <ul class="list-disc pl-6 space-y-1">
+                                                <li>Cross-browser and device compatibility testing</li>
+                                                <li>Performance optimization and load testing</li>
+                                                <li>Accessibility compliance checks (WCAG 2.1 AA)</li>
+                                                <li>Security audits and penetration testing</li>
+                                            </ul>
+                                            <p>The site was launched using a phased rollout approach to minimize risk.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phase 5 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 mr-8">
+                                        <div class="w-16 h-16 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                                            05
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-3 dark:text-white">Optimization & Support</h3>
+                                        <div class="text-gray-600 dark:text-gray-300 space-y-3">
+                                            <p>Post-launch activities included:</p>
+                                            <ul class="list-disc pl-6 space-y-1">
+                                                <li>Continuous A/B testing of conversion elements</li>
+                                                <li>Data analysis and performance reporting</li>
+                                                <li>Incremental improvements based on user behavior</li>
+                                                <li>Staff training on content management</li>
+                                            </ul>
+                                            <p>We established an ongoing optimization schedule to ensure continuous improvement.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results section -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">Results</h2>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-8 mb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <!-- Result 1 -->
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">200%</div>
+                                    <div class="text-gray-600 dark:text-gray-300">Increase in user engagement</div>
+                                </div>
+                                
+                                <!-- Result 2 -->
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">150%</div>
+                                    <div class="text-gray-600 dark:text-gray-300">Growth in organic traffic</div>
+                                </div>
+                                
+                                <!-- Result 3 -->
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">3X</div>
+                                    <div class="text-gray-600 dark:text-gray-300">Lead generation rate</div>
+                                </div>
+                                
+                                <!-- Result 4 -->
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">80%</div>
+                                    <div class="text-gray-600 dark:text-gray-300">Reduction in bounce rate</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prose dark:prose-invert max-w-none lg:prose-lg">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                The redesigned website transformed TechPro's digital presence and delivered measurable business impact:
+                            </p>
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li>Average time on site increased from 1:20 to 4:05 minutes</li>
+                                <li>Mobile conversion rate improved by 215%</li>
+                                <li>Page load time reduced from 8.2 seconds to 1.8 seconds</li>
+                                <li>Site visitors increased from 25,000 to 62,500 monthly</li>
+                                <li>Lead quality improved with 45% higher SQL (Sales Qualified Lead) rate</li>
+                                <li>Customer feedback surveys showed 92% satisfaction with the new site vs. 34% for the old site</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Results chart -->
+                        <div class="mt-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 dark:text-white">Performance Metrics - Before & After</h3>
+                            <div class="w-full h-80 bg-gray-100 dark:bg-gray-700 rounded-lg relative">
+                                <!-- Placeholder for an actual chart - would be implemented with a chart library in production -->
+                                <div class="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                                    <p class="text-center">Interactive performance chart showing before/after metrics<br>Would be implemented with actual data using Chart.js or similar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client testimonial -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">Client Testimonial</h2>
+                        
+                        <div class="relative bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+                            <!-- Quote icon -->
+                            <div class="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-primary-500 flex items-center justify-center text-white shadow-md">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            
+                            <div class="pt-4">
+                                <p class="text-gray-600 dark:text-gray-300 text-lg italic mb-6">
+                                    "MS Digital Marketing completely transformed our online presence. Their strategic approach to the website redesign has not only modernized our brand but delivered tangible business results. The increased lead generation and engagement have directly impacted our sales pipeline, and our team is thrilled with how easy the new site is to manage. We couldn't be happier with the outcome."
+                                </p>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 mr-4 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold">
+                                        JD
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 dark:text-white">Jennifer Davis</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">CMO, TechPro Industries</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar column -->
+                <div class="lg:col-span-4">
+                    <div class="sticky top-24">
+                        <!-- Project info card -->
+                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 p-6 mb-8" data-aos="fade-up">
+                            <h3 class="text-xl font-bold mb-4 dark:text-white">Project Details</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">Project Timeline</h4>
+                                        <p class="text-gray-900 dark:text-white">12 Weeks</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4">
+                                        <i class="fas fa-tag"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">Industry</h4>
+                                        <p class="text-gray-900 dark:text-white">Enterprise Software</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">Target Audience</h4>
+                                        <p class="text-gray-900 dark:text-white">IT Decision Makers, CTOs, CIOs</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">Services Provided</h4>
+                                        <p class="text-gray-900 dark:text-white">UI/UX Design, Web Development, SEO, Content Strategy</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">Technologies Used</h4>
+                                        <p class="text-gray-900 dark:text-white">React, Tailwind CSS, Node.js, Headless CMS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA card -->
+                        <div class="bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl shadow-lg p-6 text-white" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="text-xl font-bold mb-4">Ready to Transform Your Digital Presence?</h3>
+                            <p class="mb-6 text-white/80">
+                                Let's discuss how we can help you achieve similar results for your business.  
+                            </p>
+                            <a href="../contact.html" class="block bg-white text-primary-600 hover:bg-gray-100 font-bold py-3 px-4 rounded-lg text-center transition-colors duration-300">
+                                Schedule a Free Consultation
+                            </a>
+                        </div>
+                        
+                        <!-- Related projects -->
+                        <div class="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-xl font-bold mb-4 dark:text-white">Related Projects</h3>
+                            
+                            <div class="space-y-4">
+                                <!-- Related project 1 -->
+                                <a href="#" class="block group">
+                                    <div class="flex items-start">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                                            <img src="../../images/portfolio/project2.svg" alt="PPC Campaign" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Scaling Growth with Data-Driven PPC</h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">PPC Advertising</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <!-- Related project 2 -->
+                                <a href="#" class="block group">
+                                    <div class="flex items-start">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                                            <img src="../../images/portfolio/project3.svg" alt="Social Media Campaign" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Building Brand Awareness Through Social</h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Social Media</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <!-- Related project 3 -->
+                                <a href="#" class="block group">
+                                    <div class="flex items-start">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                                            <img src="../../images/portfolio/project4.svg" alt="SEO Project" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Dominating Search Results with SEO</h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">SEO Optimization</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Next case study navigation -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-up">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">Previous Case Study</div>
+                    <a href="#" class="group flex items-center text-gray-900 dark:text-white font-bold hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        Dominating Search Results with SEO
+                    </a>
+                </div>
+                
+                <div class="text-right">
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-1">Next Case Study</div>
+                    <a href="#" class="group flex items-center justify-end text-gray-900 dark:text-white font-bold hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        Scaling Growth with Data-Driven PPC
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action section before footer -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0 md:mr-8 text-center md:text-left" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Ready to Transform Your Digital Presence?</h2>
+                    <p class="text-white/80 text-lg max-w-xl">Let's work together to develop a winning digital strategy that drives real business results.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <a href="../contact.html" class="inline-flex items-center bg-white text-primary-600 font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600">
+                        <span class="mr-2">Get Started Today</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                <!-- Company info column -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">
+                            MS
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Digital Marketing</h3>
+                    </div>
+                    <p class="mb-6 text-gray-300 max-w-sm">
+                        Transform your digital presence with our innovative marketing solutions. We help businesses grow through data-driven strategies and creative execution.
+                    </p>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links columns -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Pages
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Home</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>About Us</a></li>
+                        <li><a href="../services.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Services</a></li>
+                        <li><a href="../portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Blog</a></li>
+                        <li><a href="../faq.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>FAQ</a></li>
+                        <li><a href="../../legal/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact info column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email:</p>
+                                <a href="mailto:contact@msdigitalmarketing.com" class="text-white hover:text-primary-400 transition-colors">contact@msdigitalmarketing.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-phone-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Phone:</p>
+                                <a href="tel:+1XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Address:</p>
+                                <p class="text-white">[Insert Address Here]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent flex-grow text-white">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-r-lg transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="../../legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="../../legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
+    <script src="../../js/main.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Check for dark mode preference
+        document.addEventListener('alpine:init', () => {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('body').__x.$data.darkMode = true;
+            }
+        });
+        
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -179,19 +179,15 @@
     </a>
 
     <!-- Page header with modern design -->
-    <section class="relative py-20 bg-gradient-to-r from-primary-600 to-primary-500 text-white overflow-hidden">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
-        </div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Blog & Resources</h1>
-                <p class="text-lg text-white/90 max-w-2xl mx-auto">
-                    Our blog provides the latest insights, trends, and actionable tips in digital marketing. 
-                    Stay informed with our expert content designed to help you navigate the fast-changing digital landscape.
-                </p>
-            </div>
+    <section class="relative py-24 md:py-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero/hero-banner.svg');" id="main-content">
+        <div class="absolute inset-0 bg-primary-600/20 mix-blend-multiply"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display" data-aos="fade-up">
+                Blog & Resources
+            </h1>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Our blog provides the latest insights, trends, and actionable tips in digital marketing. Stay informed with our expert content designed to help you navigate the fast-changing digital landscape.
+            </p>
         </div>
     </section>
 
@@ -205,10 +201,12 @@
                     <!-- Blog post 1 -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="../images/blog/blog1.svg" alt="Digital Marketing Trends" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                                Digital Marketing
-                            </div>
+                            <a href="blog-posts/digital-marketing-trends-2025.html">
+                                <img src="../images/blog/blog1.svg" alt="Digital Marketing Trends" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    Digital Marketing
+                                </div>
+                            </a>
                         </div>
                         <div class="p-6">
                             <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4 space-x-4">
@@ -226,12 +224,14 @@
                                 </span>
                             </div>
                             <h2 class="text-2xl font-bold mb-3 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                                5 Digital Marketing Trends You Can't Ignore in 2025
+                                <a href="blog-posts/digital-marketing-trends-2025.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                    5 Digital Marketing Trends You Can't Ignore in 2025
+                                </a>
                             </h2>
                             <p class="text-gray-600 dark:text-gray-300 mb-5">
                                 From AI innovations to new social media strategies, discover the trends shaping the future of digital marketing. Learn how to stay ahead of the competition with these cutting-edge approaches.
                             </p>
-                            <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <a href="blog-posts/social-media-strategies-2025.html" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
                                 Read More
                                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -243,10 +243,12 @@
                     <!-- Blog post 2 -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="../images/blog/blog2.svg" alt="SEO Optimization" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                                SEO
-                            </div>
+                            <a href="blog-posts/seo-optimization-2025.html">
+                                <img src="../images/blog/blog.jpg" alt="SEO Optimization" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    SEO
+                                </div>
+                            </a>
                         </div>
                         <div class="p-6">
                             <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4 space-x-4">
@@ -264,12 +266,14 @@
                                 </span>
                             </div>
                             <h2 class="text-2xl font-bold mb-3 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                                How to Optimize Your Website for SEO in 2025
+                                <a href="blog-posts/seo-optimization-2025.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                    How to Optimize Your Website for SEO in 2025
+                                </a>
                             </h2>
                             <p class="text-gray-600 dark:text-gray-300 mb-5">
                                 A comprehensive guide to boosting your organic rankings with proven SEO techniques. Discover the latest algorithms changes and how to adapt your strategy for maximum visibility.
                             </p>
-                            <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <a href="blog-posts/seo-optimization-2025.html" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
                                 Read More
                                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -281,10 +285,12 @@
                     <!-- Blog post 3 -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="../images/blog/blog3.svg" alt="Social Media Marketing" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                                Social Media
-                            </div>
+                            <a href="blog-posts/social-media-strategies-2025.html">
+                                <img src="../images/blog/blog3.svg" alt="Social Media Marketing" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    Social Media
+                                </div>
+                            </a>
                         </div>
                         <div class="p-6">
                             <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4 space-x-4">
@@ -302,12 +308,14 @@
                                 </span>
                             </div>
                             <h2 class="text-2xl font-bold mb-3 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                                Mastering Social Media Marketing: Strategies for 2025
+                                <a href="blog-posts/social-media-strategies-2025.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                    Mastering Social Media Marketing: Strategies for 2025
+                                </a>
                             </h2>
                             <p class="text-gray-600 dark:text-gray-300 mb-5">
                                 Learn the latest tactics and tools to build a powerful social media presence for your brand. Discover how to create engaging content that resonates with your audience and drives conversions.
                             </p>
-                            <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <a href="blog-posts/social-media-strategies-2025.html" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
                                 Read More
                                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -319,22 +327,22 @@
                     <!-- Pagination -->
                     <div class="flex justify-center mt-10" data-aos="fade-up">
                         <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <a href="blog.html?page=1" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
                                 <span class="sr-only">Previous</span>
                                 <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </a>
-                            <a href="#" aria-current="page" class="z-10 bg-primary-50 dark:bg-primary-900/20 border-primary-500 dark:border-primary-500 text-primary-600 dark:text-primary-400 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            <a href="blog.html?page=1" aria-current="page" class="z-10 bg-primary-50 dark:bg-primary-900/20 border-primary-500 dark:border-primary-500 text-primary-600 dark:text-primary-400 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
                                 1
                             </a>
-                            <a href="#" class="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            <a href="blog.html?page=2" class="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
                                 2
                             </a>
-                            <a href="#" class="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            <a href="blog.html?page=3" class="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
                                 3
                             </a>
-                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <a href="blog.html?page=2" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
                                 <span class="sr-only">Next</span>
                                 <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -362,7 +370,7 @@
                         <h3 class="text-lg font-bold mb-4 dark:text-white">Categories</h3>
                         <ul class="space-y-2">
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                <a href="blog.html?category=digital-marketing" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         Digital Marketing
@@ -371,7 +379,7 @@
                                 </a>
                             </li>
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                <a href="blog.html?category=seo" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         SEO
@@ -380,7 +388,7 @@
                                 </a>
                             </li>
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                <a href="blog.html?category=content-marketing" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         Content Marketing
@@ -389,7 +397,7 @@
                                 </a>
                             </li>
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                <a href="blog.html?category=social-media" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         Social Media
@@ -398,7 +406,7 @@
                                 </a>
                             </li>
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                <a href="blog.html?category=ppc-advertising" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         PPC Advertising
@@ -407,7 +415,7 @@
                                 </a>
                             </li>
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                <a href="blog.html?category=email-marketing" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         Email Marketing
@@ -416,7 +424,7 @@
                                 </a>
                             </li>
                             <li class="transition-colors">
-                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">
+                                <a href="blog.html?category=analytics" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">
                                     <span class="flex items-center">
                                         <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                                         Analytics
@@ -432,7 +440,7 @@
                         <h3 class="text-lg font-bold mb-4 dark:text-white">Popular Posts</h3>
                         <ul class="space-y-4">
                             <li>
-                                <a href="#" class="flex group">
+                                <a href="blog-posts/content-marketing-guide.html" class="flex group">
                                     <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
                                         <img src="../images/blog/blog-thumb1.svg" alt="Content Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                                     </div>
@@ -443,7 +451,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex group">
+                                <a href="blog-posts/successful-ppc-campaign.html" class="flex group">
                                     <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
                                         <img src="../images/blog/blog-thumb2.svg" alt="PPC Campaign" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                                     </div>
@@ -454,7 +462,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex group">
+                                <a href="blog-posts/email-marketing-tips.html" class="flex group">
                                     <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
                                         <img src="../images/blog/blog-thumb3.svg" alt="Email Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                                     </div>
@@ -465,7 +473,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="flex group">
+                                <a href="blog-posts/understanding-google-analytics.html" class="flex group">
                                     <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
                                         <img src="../images/blog/blog-thumb4.svg" alt="Google Analytics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                                     </div>
@@ -482,16 +490,16 @@
                     <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="text-lg font-bold mb-4 dark:text-white">Tags</h3>
                         <div class="flex flex-wrap gap-2">
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#marketing</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#seo</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#socialmedia</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#contentmarketing</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#ppc</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#analytics</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#trends</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#strategy</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#email</a>
-                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#digitalmarketing</a>
+                            <a href="blog.html?tag=marketing" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#marketing</a>
+                            <a href="blog.html?tag=seo" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#seo</a>
+                            <a href="blog.html?tag=socialmedia" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#socialmedia</a>
+                            <a href="blog.html?tag=contentmarketing" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#contentmarketing</a>
+                            <a href="blog.html?tag=ppc" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#ppc</a>
+                            <a href="blog.html?tag=analytics" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#analytics</a>
+                            <a href="blog.html?tag=trends" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#trends</a>
+                            <a href="blog.html?tag=strategy" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#strategy</a>
+                            <a href="blog.html?tag=email" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#email</a>
+                            <a href="blog.html?tag=digitalmarketing" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#digitalmarketing</a>
                         </div>
                     </div>
                 </div>
@@ -658,7 +666,7 @@
                             </div>
                             <div>
                                 <p class="text-gray-300">Address:</p>
-                                <p class="text-white">[Insert Address Here]</p>
+                                <p class="text-white">msdigitalmarketingagency90@gmail.com</p>
                             </div>
                         </li>
                     </ul>
@@ -700,6 +708,7 @@
     </button>
     
     <script src="../js/main.js"></script>
+    <script src="../js/chatbot.js"></script>
     <script>
         // Initialize AOS animations
         AOS.init({

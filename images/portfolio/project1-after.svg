@@ -1,0 +1,61 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Modern website mockup -->
+  <defs>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0284c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="80" fill="url(#header-grad)"/>
+  <circle cx="80" cy="40" r="25" fill="white"/>
+  <rect x="120" y="30" width="150" height="20" rx="5" ry="5" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Navigation -->
+  <rect x="400" y="32" width="50" height="16" rx="8" ry="8" fill="white" fill-opacity="0.9"/>
+  <rect x="470" y="32" width="50" height="16" rx="8" ry="8" fill="white" fill-opacity="0.9"/>
+  <rect x="540" y="32" width="50" height="16" rx="8" ry="8" fill="white" fill-opacity="0.9"/>
+  <rect x="610" y="32" width="50" height="16" rx="8" ry="8" fill="white" fill-opacity="0.9"/>
+  <rect x="680" y="25" width="70" height="30" rx="15" ry="15" fill="white"/>
+  
+  <!-- Hero section -->
+  <rect x="0" y="80" width="800" height="200" fill="#f1f5f9"/>
+  <rect x="80" y="120" width="360" height="40" rx="5" ry="5" fill="#0ea5e9"/>
+  <rect x="80" y="170" width="300" height="16" rx="8" ry="8" fill="#64748b"/>
+  <rect x="80" y="196" width="300" height="16" rx="8" ry="8" fill="#64748b"/>
+  <rect x="80" y="230" width="120" height="36" rx="18" ry="18" fill="#0ea5e9"/>
+  
+  <!-- Content cards -->
+  <rect x="80" y="320" width="200" height="180" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="100" y="340" width="160" height="16" rx="8" ry="8" fill="#0ea5e9"/>
+  <rect x="100" y="370" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="100" y="390" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="100" y="410" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="100" y="450" width="80" height="30" rx="15" ry="15" fill="#0ea5e9"/>
+  
+  <rect x="300" y="320" width="200" height="180" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="320" y="340" width="160" height="16" rx="8" ry="8" fill="#0ea5e9"/>
+  <rect x="320" y="370" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="320" y="390" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="320" y="410" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="320" y="450" width="80" height="30" rx="15" ry="15" fill="#0ea5e9"/>
+  
+  <rect x="520" y="320" width="200" height="180" rx="10" ry="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="540" y="340" width="160" height="16" rx="8" ry="8" fill="#0ea5e9"/>
+  <rect x="540" y="370" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="540" y="390" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="540" y="410" width="160" height="12" rx="6" ry="6" fill="#64748b"/>
+  <rect x="540" y="450" width="80" height="30" rx="15" ry="15" fill="#0ea5e9"/>
+  
+  <!-- Footer -->
+  <rect x="0" y="520" width="800" height="80" fill="#1e293b"/>
+  <rect x="80" y="542" width="100" height="16" rx="8" ry="8" fill="#94a3b8"/>
+  <rect x="350" y="542" width="100" height="16" rx="8" ry="8" fill="#94a3b8"/>
+  <rect x="600" y="542" width="100" height="16" rx="8" ry="8" fill="#94a3b8"/>
+  
+  <!-- Text indicating modern design -->
+  <text x="400" y="30" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Modern Website Design</text>
+</svg>

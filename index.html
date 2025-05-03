@@ -23,6 +23,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/tailwind-config.js"></script>
     
+    <style>
+        /* Custom animation for the scroll button */
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
@@ -178,7 +194,7 @@
         Skip to content
     </a>
 
-    <section id="main-content" class="relative py-32 lg:py-48 text-white bg-cover bg-center overflow-hidden" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hero/hero-banner.jpg');">
+    <section id="main-content" class="relative py-32 lg:py-48 text-white bg-cover bg-center overflow-hidden" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hero/hero-banner2.jpg');">
         <!-- Animated particles or shapes in the background -->
         <div class="absolute inset-0 z-0 overflow-hidden">
             <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-500/20 rounded-full filter blur-3xl animate-bounce-slow"></div>
@@ -261,10 +277,20 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Scroll Down Button -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <a href="#expertise" class="text-white group flex flex-col items-center animate-bounce-slow">
+                    <span class="text-sm mb-2 opacity-80">Scroll Down</span>
+                    <svg class="w-6 h-6 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section class="py-24 relative dark:bg-gray-900">
+    <section id="expertise" class="py-24 relative dark:bg-gray-900">
         <!-- Background decorations -->
         <div class="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900/20 dark:to-transparent -z-10"></div>
         <div class="absolute bottom-0 right-0 w-72 h-72 bg-gradient-radial from-primary-200/30 to-transparent dark:from-primary-900/10 dark:to-transparent rounded-full -z-10 blur-2xl"></div>
@@ -522,6 +548,16 @@
                     </a>
                 </div>
             </div>
+            
+            <!-- Scroll Down Button -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <a href="#expertise" class="text-white group flex flex-col items-center animate-bounce-slow">
+                    <span class="text-sm mb-2 opacity-80">Scroll Down</span>
+                    <svg class="w-6 h-6 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -686,6 +722,16 @@
                     </a>
                 </div>
             </div>
+            
+            <!-- Scroll Down Button -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <a href="#expertise" class="text-white group flex flex-col items-center animate-bounce-slow">
+                    <span class="text-sm mb-2 opacity-80">Scroll Down</span>
+                    <svg class="w-6 h-6 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
     
@@ -834,6 +880,7 @@
     </button>
     
     <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
     <script>
         // Initialize AOS animations
         AOS.init({
@@ -882,6 +929,22 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset for header
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
         

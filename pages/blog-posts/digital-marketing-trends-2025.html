@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the 5 digital marketing trends that will dominate 2025 and how your business can leverage them for maximum impact.">
+    <meta name="keywords" content="digital marketing trends, 2025 marketing, AI marketing, social media strategies, content marketing trends">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="5 Digital Marketing Trends You Can't Ignore in 2025 - MS Digital Marketing">
+    <meta property="og:description" content="Stay ahead of the competition with these cutting-edge digital marketing approaches for 2025.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/blog-posts/digital-marketing-trends-2025.html">
+    <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
+    <title>5 Digital Marketing Trends You Can't Ignore in 2025 - MS Digital Marketing</title>
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/tailwind-config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+    
+    <!-- Header with glass morphism effect -->    
+    <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->                
+                <div class="logo flex items-center">
+                    <a href="../../index.html" class="flex items-center">
+                        <span class="bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->                
+                <nav class="hidden md:block" aria-label="Main Navigation">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="../../index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../about.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                About Us
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../portfolio.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Portfolio
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../blog.html" class="block px-3 py-2 text-primary-600 dark:text-primary-400 font-medium transition-colors">
+                                Blog
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../faq.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                FAQ
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="../contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->                    
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Social Icons - Only show on desktop -->                    
+                    <div class="hidden md:flex items-center mr-4">
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <!-- Contact Button - Only show on desktop -->                    
+                    <a href="../contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                        Get in Touch
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->            
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-200" 
+                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-end="opacity-100 translate-y-0" 
+                x-transition:leave="transition ease-in duration-150" 
+                x-transition:leave-start="opacity-100 translate-y-0" 
+                x-transition:leave-end="opacity-0 -translate-y-4" 
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="../about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">About Us</a></li>
+                        <li><a href="../services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="../portfolio.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Portfolio</a></li>
+                        <li><a href="../blog.html" class="block px-3 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400 font-medium">Blog</a></li>
+                        <li><a href="../faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">FAQ</a></li>
+                        <li><a href="../contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Accessible skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
+        Skip to content
+    </a>
+
+    <!-- Blog post header -->
+    <section class="relative py-32 md:py-40 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../images/blog/blog1.svg');" id="main-content">
+        <div class="absolute inset-0 bg-primary-600/20 mix-blend-multiply"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back to blog link -->
+                <a href="../blog.html" class="inline-flex items-center text-white/80 hover:text-white mb-6 group transition-all duration-300">
+                    <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Blog
+                </a>
+                
+                <!-- Category tag -->
+                <div class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-600 text-white text-sm font-semibold">
+                    Digital Marketing
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display" data-aos="fade-up">
+                    5 Digital Marketing Trends You Can't Ignore in 2025
+                </h1>
+                
+                <!-- Post meta -->
+                <div class="flex flex-wrap items-center text-white/80 mb-8 space-x-6">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-primary-500 flex items-center justify-center mr-3 text-white font-bold">
+                            MS
+                        </div>
+                        <span>Madinatu Seidu</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-calendar mr-2"></i>
+                        <span>June 15, 2025</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>8 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main blog content area -->
+    <section class="py-16 bg-white dark:bg-gray-900 relative">
+        <!-- Social sharing sidebar - desktop only -->
+        <div class="hidden lg:block fixed top-1/2 left-8 transform -translate-y-1/2 z-10">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Copy Link">
+                    <i class="fas fa-link"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Main content -->
+                <div class="lg:col-span-8 lg:col-start-3">
+                    <!-- Introduction -->
+                    <div class="prose dark:prose-invert prose-lg max-w-none mb-16" data-aos="fade-up">
+                        <p class="lead text-xl text-gray-600 dark:text-gray-300">
+                            The digital marketing landscape continues to evolve at a breakneck pace, with new technologies and consumer behaviors reshaping how brands connect with their audiences. As we move into 2025, staying ahead of these trends isn't just advantageous—it's essential for survival in an increasingly competitive marketplace. 
+                        </p>
+                        
+                        <p class="text-gray-600 dark:text-gray-300">
+                            In this article, we'll explore the five most significant digital marketing trends that will dominate 2025 and provide actionable insights on how your business can leverage them for maximum impact.
+                        </p>
+                        
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl my-8">
+                            <h2 class="text-2xl font-bold mb-4 dark:text-white">What you'll learn:</h2>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li>• How AI is transforming content creation and personalization</li>
+                                <li>• The rise of voice search and conversational marketing</li>
+                                <li>• Why privacy-focused marketing is becoming mandatory</li>
+                                <li>• How immersive technologies are changing customer experiences</li>
+                                <li>• The growing importance of sustainability in digital strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend 1 -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">1. AI-Powered Hyper-Personalization</h2>
+                        
+                        <div class="mb-8 overflow-hidden rounded-xl">
+                            <img src="../../images/blog/ai-personalization.svg" alt="AI-Powered Personalization" class="w-full h-auto rounded-xl">
+                        </div>
+                        
+                        <div class="prose dark:prose-invert prose-lg max-w-none">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Artificial intelligence has moved beyond basic automation to become a sophisticated tool for creating deeply personalized marketing experiences. In 2025, AI algorithms will analyze vast amounts of customer data to deliver individually tailored content, recommendations, and interactions at scale.
+                            </p>
+                            
+                            <h3 class="text-xl font-bold mt-8 mb-4 dark:text-white">Key Developments:</h3>
+                            
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li><strong>Predictive personalization:</strong> AI systems will anticipate customer needs before they express them, creating "zero-click" purchasing journeys.</li>
+                                <li><strong>Dynamic content generation:</strong> AI content creation tools will produce personalized content variations at scale, automatically optimized for individual preferences.</li>
+                                <li><strong>Emotional intelligence:</strong> Advanced AI will recognize and respond to emotional cues in customer behavior, adjusting messaging tone and content accordingly.</li>
+                                <li><strong>Cross-channel consistency:</strong> AI will ensure seamless personalization across all touchpoints, creating a unified experience regardless of where interactions occur.</li>
+                            </ul>
+                            
+                            <div class="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-xl my-8 border-l-4 border-primary-500">
+                                <h4 class="text-lg font-bold mb-2 text-primary-700 dark:text-primary-400">Action Steps:</h4>
+                                <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-1">
+                                    <li>Audit your customer data collection practices to ensure you're gathering relevant information for personalization.</li>
+                                    <li>Invest in AI-powered marketing platforms that can segment audiences and deliver personalized content at scale.</li>
+                                    <li>Develop a first-party data strategy that respects privacy while building detailed customer profiles.</li>
+                                    <li>Test AI-generated content variations to determine which resonates best with different segments.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                While implementing AI personalization, remember that transparency is key. Customers are increasingly aware of how their data is being used, so be upfront about your personalization practices and ensure they deliver genuine value in exchange for the information shared.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend 2 -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">2. Voice Search and Conversational Marketing</h2>
+                        
+                        <div class="mb-8 overflow-hidden rounded-xl">
+                            <img src="../../images/blog/voice-search.svg" alt="Voice Search and Conversational Marketing" class="w-full h-auto rounded-xl">
+                        </div>
+                        
+                        <div class="prose dark:prose-invert prose-lg max-w-none">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                By 2025, voice-activated devices will be ubiquitous in homes and workplaces, fundamentally changing how users search for and interact with brands. Voice search is increasingly conversational, with users asking complex questions rather than typing keyword-focused queries.
+                            </p>
+                            
+                            <h3 class="text-xl font-bold mt-8 mb-4 dark:text-white">Key Developments:</h3>
+                            
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li><strong>Voice commerce growth:</strong> Voice-initiated purchases will grow by 55% year over year, with particular strength in replenishable household items.</li>
+                                <li><strong>Conversational AI advances:</strong> Voice assistants will handle increasingly complex interactions, managing multi-step processes and remembering context from previous conversations.</li>
+                                <li><strong>Local search dominance:</strong> "Near me" voice searches will continue to rise, making local SEO optimization critical for brick-and-mortar businesses.</li>
+                                <li><strong>Voice-specific content:</strong> Brands will develop content specifically formatted for voice search, including FAQ structures and conversational long-tail keywords.</li>
+                            </ul>
+                            
+                            <div class="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-xl my-8 border-l-4 border-primary-500">
+                                <h4 class="text-lg font-bold mb-2 text-primary-700 dark:text-primary-400">Action Steps:</h4>
+                                <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-1">
+                                    <li>Optimize your content for natural language queries and conversational keywords.</li>
+                                    <li>Implement structured data markup to help voice assistants better understand your content.</li>
+                                    <li>Create voice-specific assets like audio content summaries and voice-navigable interfaces.</li>
+                                    <li>Develop a voice app or skill for popular voice assistant platforms if relevant to your business.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Voice search optimization also means considering the device context. Voice searches on smartphones often have different intent than those on smart speakers, so tailor your strategy accordingly. Remember that voice search results are typically limited to the top few results, making ranking highly even more critical than with traditional search.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend 3 -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">3. Privacy-First Marketing</h2>
+                        
+                        <div class="mb-8 overflow-hidden rounded-xl">
+                            <img src="../../images/blog/privacy-marketing.svg" alt="Privacy-First Marketing" class="w-full h-auto rounded-xl">
+                        </div>
+                        
+                        <div class="prose dark:prose-invert prose-lg max-w-none">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                With the phasing out of third-party cookies, stricter privacy regulations, and growing consumer awareness about data usage, privacy-first marketing isn't just a compliance issue—it's becoming a competitive advantage. Brands that prioritize user privacy while still delivering personalized experiences will win consumer trust.
+                            </p>
+                            
+                            <h3 class="text-xl font-bold mt-8 mb-4 dark:text-white">Key Developments:</h3>
+                            
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li><strong>Cookieless attribution models:</strong> New methods for measuring campaign effectiveness without relying on individual tracking.</li>
+                                <li><strong>First-party data strategies:</strong> Increased focus on building direct relationships with customers to gather consensual data.</li>
+                                <li><strong>Privacy as a value proposition:</strong> Brands actively promoting their privacy practices as a selling point to privacy-conscious consumers.</li>
+                                <li><strong>Contextual targeting revival:</strong> Advanced contextual advertising that delivers relevance without personal data.</li>
+                            </ul>
+                            
+                            <div class="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-xl my-8 border-l-4 border-primary-500">
+                                <h4 class="text-lg font-bold mb-2 text-primary-700 dark:text-primary-400">Action Steps:</h4>
+                                <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-1">
+                                    <li>Develop transparent data policies that clearly communicate how customer data is collected and used.</li>
+                                    <li>Implement consent management platforms that go beyond basic compliance to give users granular control.</li>
+                                    <li>Invest in first-party data collection methods like interactive content, surveys, and loyalty programs.</li>
+                                    <li>Test contextual targeting strategies that deliver relevance based on content rather than user profiles.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                The most successful brands will see privacy not as a limitation but as an opportunity to build more authentic relationships with customers. By being transparent about data practices and demonstrating genuine respect for consumer privacy, you can turn compliance necessity into a trust-building advantage.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend 4 -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">4. Immersive Experiences: AR, VR, and the Metaverse</h2>
+                        
+                        <div class="mb-8 overflow-hidden rounded-xl">
+                            <img src="../../images/blog/ar-vr-marketing.svg" alt="Immersive Experiences - AR, VR, and the Metaverse" class="w-full h-auto rounded-xl">
+                        </div>
+                        
+                        <div class="prose dark:prose-invert prose-lg max-w-none">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                As augmented reality (AR) and virtual reality (VR) technologies become more accessible and the concept of the metaverse gains traction, brands are discovering entirely new ways to engage customers through immersive digital experiences. By 2025, these technologies will move from experimental to essential for many consumer categories.
+                            </p>
+                            
+                            <h3 class="text-xl font-bold mt-8 mb-4 dark:text-white">Key Developments:</h3>
+                            
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li><strong>Everyday AR:</strong> Augmented reality features will become standard in e-commerce, allowing customers to visualize products in their own environments before purchasing.</li>
+                                <li><strong>Virtual retail environments:</strong> Fully immersive shopping experiences where customers can browse products in virtual stores.</li>
+                                <li><strong>Digital twins:</strong> Virtual replicas of physical products and spaces that enhance customer understanding and engagement.</li>
+                                <li><strong>Metaverse marketing:</strong> Brands establishing persistent presence in virtual worlds where consumers socialize, play, and increasingly, shop.</li>
+                            </ul>
+                            
+                            <div class="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-xl my-8 border-l-4 border-primary-500">
+                                <h4 class="text-lg font-bold mb-2 text-primary-700 dark:text-primary-400">Action Steps:</h4>
+                                <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-1">
+                                    <li>Identify practical AR applications for your products that solve real customer problems or enhance the buying experience.</li>
+                                    <li>Consider creating virtual showrooms or product demonstrations that allow for interactive exploration.</li>
+                                    <li>Explore partnerships with existing metaverse platforms to establish brand presence where your audience already spends time.</li>
+                                    <li>Invest in 3D asset creation that can be reused across different immersive marketing initiatives.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                When implementing immersive technologies, focus on utility over novelty. The most successful applications will be those that genuinely enhance the customer experience rather than simply showcasing the technology itself. Start with small-scale implementations that deliver measurable value before scaling to more ambitious projects.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Trend 5 -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">5. Sustainable and Purpose-Driven Marketing</h2>
+                        
+                        <div class="mb-8 overflow-hidden rounded-xl">
+                            <img src="../../images/blog/sustainable-marketing.svg" alt="Sustainable and Purpose-Driven Marketing" class="w-full h-auto rounded-xl">
+                        </div>
+                        
+                        <div class="prose dark:prose-invert prose-lg max-w-none">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Environmental and social consciousness is increasingly influencing consumer purchasing decisions. By 2025, brands will be expected to demonstrate genuine commitment to sustainability and social responsibility, not just in their products but in their marketing practices as well.
+                            </p>
+                            
+                            <h3 class="text-xl font-bold mt-8 mb-4 dark:text-white">Key Developments:</h3>
+                            
+                            <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-2">
+                                <li><strong>Green digital marketing:</strong> Reducing the carbon footprint of digital campaigns and operations.</li>
+                                <li><strong>Transparent supply chains:</strong> Communicating ethical sourcing and production practices through digital channels.</li>
+                                <li><strong>Values-based community building:</strong> Creating digital spaces where customers can connect around shared values and causes.</li>
+                                <li><strong>Impact measurement:</strong> Tools for quantifying and reporting the environmental and social impact of both products and marketing activities.</li>
+                            </ul>
+                            
+                            <div class="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-xl my-8 border-l-4 border-primary-500">
+                                <h4 class="text-lg font-bold mb-2 text-primary-700 dark:text-primary-400">Action Steps:</h4>
+                                <ul class="text-gray-600 dark:text-gray-300 list-disc pl-6 space-y-1">
+                                    <li>Audit your digital marketing activities for their environmental impact and identify areas for improvement.</li>
+                                    <li>Develop a clear statement of your brand's social and environmental values that guides marketing decisions.</li>
+                                    <li>Create content that educates customers about sustainability issues relevant to your industry.</li>
+                                    <li>Partner with environmental or social organizations on cause marketing campaigns that generate measurable impact.</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Authenticity is paramount in purpose-driven marketing. Consumers are increasingly skilled at distinguishing between genuine commitment and "greenwashing." Ensure your sustainability claims are backed by verifiable actions and transparent reporting, and be willing to acknowledge areas where you're still working to improve.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Conclusion -->
+                    <div class="mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold mb-6 font-display dark:text-white">Conclusion: Preparing for the Future of Digital Marketing</h2>
+                        
+                        <div class="prose dark:prose-invert prose-lg max-w-none">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                The digital marketing trends of 2025 reflect a landscape that's simultaneously more technological and more human-centered. As AI and immersive technologies create new possibilities for engagement, consumers are also demanding greater privacy, authenticity, and responsibility from the brands they support.
+                            </p>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Success in this environment requires balancing innovation with ethics, personalization with privacy, and efficiency with authenticity. Brands that can navigate these apparent contradictions will be positioned for long-term success in an increasingly complex digital ecosystem.
+                            </p>
+                            
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Remember that while adopting new technologies and approaches is important, the fundamental principles of good marketing remain constant: understand your customers deeply, communicate your value clearly, and deliver experiences that build lasting relationships.
+                            </p>
+                            
+                            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl my-8">
+                                <h3 class="text-xl font-bold mb-4 dark:text-white">Ready to Future-Proof Your Digital Marketing Strategy?</h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                    At MS Digital Marketing, we help businesses stay ahead of industry trends with customized digital strategies that drive measurable results. Contact us today to schedule a consultation and discover how we can help you leverage these emerging trends for your business.
+                                </p>
+                                <a href="../contact.html" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                                    Get Started Today
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Author bio -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 mb-12" data-aos="fade-up">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-20 h-20 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 text-xl font-bold">
+                                    MS
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Madinatu Seidu</h3>
+                                <p class="text-gray-500 dark:text-gray-400 mb-4">Digital Marketing Director</p>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                    Madinatu specializes in emerging digital marketing technologies and has helped dozens of brands successfully navigate digital transformation. With over 15 years of experience in the industry, she is passionate about helping businesses leverage new trends for sustainable growth.
+                                </p>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="../contact.html" class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comments section -->
+                    <div class="mb-12" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold mb-8 dark:text-white">Comments (12)</h2>
+                        
+                        <!-- Comment form -->
+                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-8">
+                            <h3 class="text-lg font-bold mb-4 dark:text-white">Leave a Comment</h3>
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="comment" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Comment</label>
+                                    <textarea id="comment" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white" required></textarea>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="save-info" class="rounded border-gray-300 text-primary-600 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700">
+                                    <label for="save-info" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Save my name and email for the next time I comment</label>
+                                </div>
+                                <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                    Post Comment
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Comment list -->
+                        <div class="space-y-6">
+                            <!-- Comment 1 -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold">
+                                            JD
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-bold dark:text-white">James Doe</h4>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">June 16, 2025</span>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-3">
+                                            Great insights! I especially agree with the point about privacy-first marketing. As a consumer, I'm much more likely to engage with brands that are transparent about how they use my data.
+                                        </p>
+                                        <div class="flex items-center text-sm">
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mr-4">
+                                                <i class="far fa-thumbs-up mr-1"></i> 8
+                                            </button>
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                                Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comment 2 with reply -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mr-4">
+                                        <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 font-bold">
+                                            SM
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-bold dark:text-white">Sarah Miller</h4>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">June 15, 2025</span>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-3">
+                                            I'm curious about how smaller businesses can implement some of these technologies, especially AI personalization and AR experiences. Are there affordable solutions that don't require enterprise-level budgets?
+                                        </p>
+                                        <div class="flex items-center text-sm">
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mr-4">
+                                                <i class="far fa-thumbs-up mr-1"></i> 12
+                                            </button>
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                                Reply
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- Reply -->
+                                        <div class="mt-6 ml-6 pt-6 border-t border-gray-100 dark:border-gray-700">
+                                            <div class="flex items-start">
+                                                <div class="flex-shrink-0 mr-4">
+                                                    <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold">
+                                                        MS
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="flex items-center justify-between mb-2">
+                                                        <h4 class="font-bold dark:text-white">Madinatu Seidu</h4>
+                                                        <span class="text-sm text-gray-500 dark:text-gray-400">June 15, 2025</span>
+                                                    </div>
+                                                    <p class="text-gray-600 dark:text-gray-300 mb-3">
+                                                        Great question, Sarah! There are definitely more accessible options becoming available. For AI personalization, platforms like Mailchimp and HubSpot now offer AI-driven features at small business price points. As for AR, tools like Shopify AR and Instagram AR filters provide entry points without massive investment. We'll be covering affordable options in an upcoming article specifically focused on small business applications!
+                                                    </p>
+                                                    <div class="flex items-center text-sm">
+                                                        <button class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mr-4">
+                                                            <i class="far fa-thumbs-up mr-1"></i> 5
+                                                        </button>
+                                                        <button class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                                            Reply
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- View more comments button -->
+                            <div class="text-center">
+                                <button class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium py-3 px-6 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                    View More Comments (10)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Related posts -->
+                    <div data-aos="fade-up">
+                        <h2 class="text-2xl font-bold mb-8 dark:text-white">Related Articles</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Related post 1 -->
+                            <a href="seo-optimization-2025.html" class="group block bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                                <div class="aspect-video overflow-hidden">
+                                    <img src="../../images/blog/blog2.svg" alt="SEO Optimization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <div class="p-6">
+                                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">June 10, 2025</div>
+                                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors dark:text-white">
+                                        How to Optimize Your Website for SEO in 2025
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-300 line-clamp-2">
+                                        A comprehensive guide to boosting your organic rankings with proven SEO techniques. Discover the latest algorithms changes and how to adapt your strategy.
+                                    </p>
+                                </div>
+                            </a>
+                            
+                            <!-- Related post 2 -->
+                            <a href="social-media-strategies-2025.html" class="group block bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                                <div class="aspect-video overflow-hidden">
+                                    <img src="../../images/blog/blog3.svg" alt="Social Media Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <div class="p-6">
+                                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">June 5, 2025</div>
+                                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors dark:text-white">
+                                        Mastering Social Media Marketing: Strategies for 2025
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-300 line-clamp-2">
+                                        Learn the latest tactics and tools to build a powerful social media presence for your brand. Discover how to create engaging content that resonates with your audience.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter section -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-primary-500 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-aos="fade-up">Stay Updated with the Latest Digital Trends</h2>
+                <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Subscribe to our newsletter to receive exclusive insights, industry reports, and actionable tips delivered straight to your inbox.
+                </p>
+                <form class="flex flex-col sm:flex-row max-w-md mx-auto gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 shadow-lg">
+                    <button type="submit" class="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition-colors shadow-lg whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-white/70 text-sm mt-4" data-aos="fade-up" data-aos-delay="300">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                <!-- Company info column -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold py-1 px-2 rounded-md mr-2">
+                            MS
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Digital Marketing</h3>
+                    </div>
+                    <p class="mb-6 text-gray-300 max-w-sm">
+                        Transform your digital presence with our innovative marketing solutions. We help businesses grow through data-driven strategies and creative execution.
+                    </p>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links columns -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Pages
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Home</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>About Us</a></li>
+                        <li><a href="../services.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Services</a></li>
+                        <li><a href="../portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Blog</a></li>
+                        <li><a href="../faq.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>FAQ</a></li>
+                        <li><a href="../../legal/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Privacy Policy</a></li>
+                        <li><a href="../../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact info column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email:</p>
+                                <a href="mailto:contact@msdigitalmarketing.com" class="text-white hover:text-primary-400 transition-colors">contact@msdigitalmarketing.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-phone-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Phone:</p>
+                                <a href="tel:+1XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Address:</p>
+                                <p class="text-white">[Insert Address Here]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent flex-grow text-white">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-r-lg transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="../../legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="../../legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
+    <script src="../../js/main.js"></script>
+    <script src="../../js/chatbot.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Check for dark mode preference
+        document.addEventListener('alpine:init', () => {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('body').__x.$data.darkMode = true;
+            }
+        });
+        
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Estimated reading time calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            // This would be actual calculated reading time
+            // For demonstration, it's hardcoded
+            // const text = document.querySelector('.prose').innerText;
+            // const wordCount = text.split(/\s+/).length;
+            // const readingTime = Math.ceil(wordCount / 200); // Average reading speed
+            // document.querySelector('.reading-time').innerText = `${readingTime} min read`;
+        });
+    </script>
+</body>
+</html>

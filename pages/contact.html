@@ -379,8 +379,14 @@
             
             <!-- Map -->
             <div class="mt-16 rounded-xl overflow-hidden shadow-xl h-96 border border-gray-100 dark:border-gray-700" data-aos="fade-up">
-                <!-- Replace with your actual Google Maps embed code -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215363861428!2d-73.98784742505057!3d40.75863937138879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square" allowfullscreen="" loading="lazy" class="w-full h-full"></iframe>
+                <!-- OpenStreetMap embedded iframe approach (simpler and more reliable) -->
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-73.99127006530763%2C40.75363424080862%2C-73.97937178611757%2C40.7636443163519&amp;layer=mapnik&amp;marker=40.75863937138879%2C-73.98532092571259"
+                    style="border: none; width: 100%; height: 100%;">
+                </iframe>
+                <a href="https://www.openstreetmap.org/?mlat=40.7586&amp;mlon=-73.9853#map=17/40.7586/-73.9853" target="_blank" class="absolute bottom-2 right-2 text-xs bg-white/80 dark:bg-gray-800/80 px-2 py-1 rounded text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors z-10">
+                    View Larger Map
+                </a>
             </div>
         </div>
     </section>
@@ -549,6 +555,7 @@
     </button>
     
     <script src="../js/main.js"></script>
+    <script src="../js/chatbot.js"></script>
     <script>
         // Initialize AOS animations
         AOS.init({
