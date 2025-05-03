@@ -137,7 +137,7 @@
             <div class="contact-container">
                 <div class="contact-form">
                     <h2>Send Us a Message</h2>
-                    <form id="contact-form">
+                    <form id="contact-form" action="../process-form.php" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -303,11 +303,69 @@
             
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Here you would normally send the form data to a server
-                    // For now, we'll just show an alert
-                    alert('Thank you for your message! We will get back to you soon.');
-                    contactForm.reset();
+                    // If this is a static site without PHP, we'll need to handle the form submission with JavaScript
+                    // Check if we're on a static hosting platform
+                    if (window.location.hostname.includes('github.io') || 
+                        window.location.hostname.includes('netlify.app') || 
+                        window.location.hostname.includes('vercel.app')) {
+                        
+                        e.preventDefault(); // Prevent the default form submission
+                        
+                        // Get form values
+                        const name = document.getElementById('name').value;
+                        const email = document.getElementById('email').value;
+                        const phone = document.getElementById('phone').value;
+                        const company = document.getElementById('company').value;
+                        const service = document.getElementById('service').value;
+                        const message = document.getElementById('message').value;
+                        
+                        // Basic validation
+                        if (!name || !email || !message) {
+                            alert('Please fill out all required fields (Name, Email, and Message).');
+                            return;
+                        }
+                        
+                        // Email validation
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(email)) {
+                            alert('Please enter a valid email address.');
+                            return;
+                        }
+                        
+                        // Options for static form handling:
+                        // 1. Send to a service like Formspree
+                        const formData = new FormData();
+                        formData.append('name', name);
+                        formData.append('email', email);
+                        formData.append('phone', phone);
+                        formData.append('company', company);
+                        formData.append('service', service);
+                        formData.append('message', message);
+                        
+                        // Replace 'your-formspree-endpoint' with your actual Formspree form ID
+                        // Example: fetch('https://formspree.io/f/xrgwgpze', {
+                        fetch('https://formspree.io/f/your-formspree-endpoint', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                // Redirect to thank you page
+                                window.location.href = '../thank-you.html';
+                            } else {
+                                // Redirect to error page
+                                window.location.href = '../error.html';
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            window.location.href = '../error.html';
+                        });
+                    }
+                    // If not on static hosting, let the form submit to PHP script
                 });
             }
         });

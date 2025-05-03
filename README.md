@@ -31,6 +31,25 @@ This is a static website for MS Digital Marketing Agency based on the provided c
 - Font Awesome for icons
 - Google Maps API (embedded in contact page)
 
+## Contact Form Functionality
+
+The website includes a functional contact form that can work in two ways:
+
+### PHP-based Form Processing
+If you're hosting the website on a server with PHP support:
+1. The form submits to `process-form.php` which handles validation and email sending
+2. Upon successful submission, users are redirected to `thank-you.html`
+3. If there's an error, users are redirected to `error.html`
+
+### Static Hosting Form Processing
+For static hosting platforms (GitHub Pages, Netlify, Vercel):
+1. The form uses JavaScript to detect static hosting platforms
+2. It then submits the form data to Formspree (you need to add your Formspree endpoint)
+3. To set up Formspree:
+   - Sign up at [Formspree.io](https://formspree.io/)
+   - Create a new form and get your endpoint
+   - Replace `your-formspree-endpoint` in the contact.html file with your actual endpoint
+
 ## Setup and Local Development
 
 ### Prerequisites
