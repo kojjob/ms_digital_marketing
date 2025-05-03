@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - MS Digital Marketing Agency</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-image {
+            height: 250px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-content {
+            padding: 20px;
+        }
+        
+        .portfolio-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-content p {
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .industries-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .industry-tag {
+            background: #0077cc;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MS Digital Marketing Agency</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+        </div>
+    </section>
+
+    <section class="featured-projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://source.unsplash.com/random/800x600/?website" alt="Digital Transformation Project">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Revamping a Legacy Brand for the Digital Age</h3>
+                        <p>We helped [Client Name] transform their outdated digital presence into a modern, engaging online platform—resulting in a 200% increase in engagement.</p>
+                        <a href="#" class="cta-button">View Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://source.unsplash.com/random/800x600/?advertising" alt="PPC Campaign">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Scaling Growth with Data-Driven PPC Campaigns</h3>
+                        <p>Our targeted PPC campaigns delivered a 300% ROI for [Client Name] by optimizing ad spending and conversion strategies.</p>
+                        <a href="#" class="cta-button">View Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://source.unsplash.com/random/800x600/?social-media" alt="Social Media Campaign">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Building Brand Awareness Through Social Media</h3>
+                        <p>We created a comprehensive social media strategy that increased [Client Name]'s follower count by 500% and engagement by 350%.</p>
+                        <a href="#" class="cta-button">View Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://source.unsplash.com/random/800x600/?seo" alt="SEO Project">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Dominating Search Results with Strategic SEO</h3>
+                        <p>Our SEO optimization helped [Client Name] achieve first-page rankings for over 50 competitive keywords, increasing organic traffic by 200%.</p>
+                        <a href="#" class="cta-button">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="client-testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"MS Digital Marketing Agency delivered beyond our expectations – their strategy doubled our website traffic and boosted sales."</p>
+                    <h4>- [Client Name], Company A</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with MS Digital Marketing Agency transformed our online presence. They understand our brand and have helped us achieve remarkable growth."</p>
+                    <h4>- [Client Name], Company B</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"The ROI we've seen from MS Digital Marketing Agency's campaigns has been outstanding. They're truly experts in their field."</p>
+                    <h4>- [Client Name], Company C</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industries-served">
+        <div class="container">
+            <h2>Industries We Serve</h2>
+            <div class="industries-list">
+                <span class="industry-tag">Retail</span>
+                <span class="industry-tag">Technology</span>
+                <span class="industry-tag">Healthcare</span>
+                <span class="industry-tag">Education</span>
+                <span class="industry-tag">Finance</span>
+                <span class="industry-tag">Real Estate</span>
+                <span class="industry-tag">Hospitality</span>
+                <span class="industry-tag">Non-Profit</span>
+                <span class="industry-tag">Entertainment</span>
+                <span class="industry-tag">Manufacturing</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>MS Digital Marketing</h3>
+                    <p>Transform your digital presence with our innovative marketing solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@msdigitalmarketing.com</p>
+                    <p>Phone: +1 (XXX) XXX-XXXX</p>
+                    <p>Address: [Insert Address Here]</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

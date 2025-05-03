@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - MS Digital Marketing Agency</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .faq-container {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f1f8ff;
+        }
+        
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-question {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MS Digital Marketing Agency</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <p>Find answers to common questions about our services, process, and expertise.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">What services does MS Digital Marketing Agency offer?</div>
+                    <div class="faq-answer">
+                        <p>We provide a full spectrum of digital marketing services, including SEO, PPC, Social Media Marketing, Content Creation, and Analytics. Our comprehensive approach ensures that all aspects of your digital marketing strategy work together cohesively to achieve your business goals.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do you measure the success of your campaigns?</div>
+                    <div class="faq-answer">
+                        <p>We rely on detailed analytics and reporting to track key metrics such as traffic, engagement, conversions, and ROI. Each campaign has specific KPIs that align with your business objectives, and we provide regular reports that showcase progress and areas for optimization. Our transparent approach ensures you always know exactly how your marketing investment is performing.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What industries do you serve?</div>
+                    <div class="faq-answer">
+                        <p>We work with a diverse range of industries, including retail, technology, healthcare, education, finance, real estate, hospitality, non-profit, entertainment, and manufacturing. Our team has specialized knowledge across various sectors, allowing us to develop tailored strategies that address the unique challenges and opportunities in your specific industry.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How can I get a custom quote?</div>
+                    <div class="faq-answer">
+                        <p>Simply fill out our contact form or call us directly for a personalized consultation. We'll arrange a discovery call to understand your business goals, challenges, and budget. Based on this information, we'll create a customized proposal that outlines our recommended strategies, timeline, and investment. There's no obligation, and we're happy to answer any questions you may have about our approach.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to see results from digital marketing?</div>
+                    <div class="faq-answer">
+                        <p>The timeline for results varies based on the specific strategies employed and your starting point. Some tactics like PPC advertising can drive immediate traffic, while SEO typically requires 3-6 months to show significant improvements. Social media engagement might build steadily over several months. During our initial consultation, we'll provide realistic expectations based on your specific goals and competitive landscape.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you require long-term contracts?</div>
+                    <div class="faq-answer">
+                        <p>While we recommend a minimum commitment of 3-6 months for most strategies to demonstrate meaningful results, we offer flexible engagement options. We believe in earning your business through results, not contractual obligations. Many of our clients choose to partner with us long-term because of the value we provide, but we also offer project-based engagements for specific initiatives.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do you stay current with digital marketing trends?</div>
+                    <div class="faq-answer">
+                        <p>Our team invests in continuous education through industry certifications, conferences, workshops, and thought leadership. We closely monitor algorithm updates, platform changes, and emerging technologies. This commitment to staying at the forefront of digital marketing ensures our strategies remain innovative and effective in an ever-changing landscape.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-container" style="text-align: center; margin-top: 40px;">
+                <h3>Didn't find your answer?</h3>
+                <p>Contact us directly and we'll be happy to help.</p>
+                <a href="contact.html" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>MS Digital Marketing</h3>
+                    <p>Transform your digital presence with our innovative marketing solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@msdigitalmarketing.com</p>
+                    <p>Phone: +1 (XXX) XXX-XXXX</p>
+                    <p>Address: [Insert Address Here]</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

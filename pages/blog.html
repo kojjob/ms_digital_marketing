@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - MS Digital Marketing Agency</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .blog-post {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            height: 250px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-post:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .blog-meta span {
+            margin-right: 15px;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+        }
+        
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .sidebar-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .lead-magnet {
+            background: #f1f8ff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .lead-magnet h3 {
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MS Digital Marketing Agency</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog & Resources</h1>
+        </div>
+    </section>
+
+    <section class="blog-overview">
+        <div class="container">
+            <p>Our blog provides the latest insights, trends, and actionable tips in digital marketing. Stay informed with our expert content designed to help you navigate the fast-changing digital landscape.</p>
+            
+            <div class="blog-container">
+                <div class="blog-posts">
+                    <div class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/random/800x600/?digital-trends" alt="Digital Marketing Trends">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> June 15, 2025</span>
+                                <span><i class="far fa-user"></i> Madinatu Seidu</span>
+                                <span><i class="far fa-folder"></i> Digital Marketing</span>
+                            </div>
+                            <h3>5 Digital Marketing Trends You Can't Ignore in 2025</h3>
+                            <p>From AI innovations to new social media strategies, discover the trends shaping the future of digital marketing.</p>
+                            <a href="#" class="cta-button">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/random/800x600/?seo" alt="SEO Optimization">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> June 10, 2025</span>
+                                <span><i class="far fa-user"></i> Amanda Dufie</span>
+                                <span><i class="far fa-folder"></i> SEO</span>
+                            </div>
+                            <h3>How to Optimize Your Website for SEO in 2025</h3>
+                            <p>A comprehensive guide to boosting your organic rankings with proven SEO techniques.</p>
+                            <a href="#" class="cta-button">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="blog-image">
+                            <img src="https://source.unsplash.com/random/800x600/?social-media" alt="Social Media Marketing">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> June 5, 2025</span>
+                                <span><i class="far fa-user"></i> Madinatu Seidu</span>
+                                <span><i class="far fa-folder"></i> Social Media</span>
+                            </div>
+                            <h3>Mastering Social Media Marketing: Strategies for 2025</h3>
+                            <p>Learn the latest tactics and tools to build a powerful social media presence for your brand.</p>
+                            <a href="#" class="cta-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">Digital Marketing</a></li>
+                            <li><a href="#">SEO</a></li>
+                            <li><a href="#">Content Marketing</a></li>
+                            <li><a href="#">Social Media</a></li>
+                            <li><a href="#">PPC Advertising</a></li>
+                            <li><a href="#">Email Marketing</a></li>
+                            <li><a href="#">Analytics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Popular Posts</h3>
+                        <ul>
+                            <li><a href="#">The Ultimate Guide to Content Marketing</a></li>
+                            <li><a href="#">How to Create a Successful PPC Campaign</a></li>
+                            <li><a href="#">10 Tips for Better Email Marketing</a></li>
+                            <li><a href="#">Understanding Google Analytics 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lead-magnet">
+        <div class="container">
+            <h2>Download our FREE eBook</h2>
+            <h3>"The Ultimate Digital Marketing Toolkit"</h3>
+            <p>Get instant access to our comprehensive guide filled with tools, tips, and strategies to boost your digital marketing efforts.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email Address">
+                <button type="submit">Get Free eBook</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>MS Digital Marketing</h3>
+                    <p>Transform your digital presence with our innovative marketing solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@msdigitalmarketing.com</p>
+                    <p>Phone: +1 (XXX) XXX-XXXX</p>
+                    <p>Address: [Insert Address Here]</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
