@@ -1,6 +1,6 @@
 <?php
 // Configuration settings
-$recipient_email = 'contact@msdigitalmarketing.com'; // Change this to your actual email address
+$recipient_email = 'msdigitalmarketingagency90@gmail.com'; // Change this to your actual email address
 $email_subject = 'New Contact Form Submission from MS Digital Marketing Website';
 $success_redirect = 'thank-you.html'; // Page to redirect to after successful submission
 $error_redirect = 'error.html'; // Page to redirect to if there's an error
