@@ -26,10 +26,17 @@ This is a static website for MS Digital Marketing Agency based on the provided c
 
 ## Technologies Used
 - HTML5
-- CSS3
+- Tailwind CSS
 - JavaScript
 - Font Awesome for icons
 - Google Maps API (embedded in contact page)
+
+### Tailwind CSS Implementation
+The website uses Tailwind CSS for styling via CDN. This approach was chosen for simplicity and ease of maintenance:
+
+- The Tailwind configuration is in `js/tailwind-config.js`
+- Custom colors and theme extensions are defined in the configuration
+- No build step is required, making deployment straightforward
 
 ## Contact Form Functionality
 

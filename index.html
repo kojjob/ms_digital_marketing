@@ -6,132 +6,133 @@
     <meta name="description" content="MS Digital Marketing Agency delivers innovative, data-driven strategies that elevate your brand's online impact and accelerate business growth.">
     <meta name="keywords" content="digital marketing, SEO, social media management, PPC, paid advertising, analytics, digital strategy">
     <title>MS Digital Marketing Agency</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="shortcut icon" href="images/favicon/favicon.svg" type="image/svg+xml">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MS Digital Marketing Agency</h1>
+<body class="font-sans bg-light text-dark">
+    <header class="bg-white shadow-md sticky top-0 z-10 py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="logo mb-4 md:mb-0">
+                <h1 class="text-xl font-bold">MS Digital Marketing Agency</h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About Us</a></li>
-                    <li><a href="pages/services.html">Services</a></li>
-                    <li><a href="pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="pages/blog.html">Blog</a></li>
-                    <li><a href="pages/faq.html">FAQ</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
+            <nav class="mb-4 md:mb-0">
+                <ul class="flex flex-wrap justify-center">
+                    <li class="mx-3 my-1"><a href="index.html" class="text-dark hover:text-primary font-medium">Home</a></li>
+                    <li class="mx-3 my-1"><a href="pages/about.html" class="text-dark hover:text-primary font-medium">About Us</a></li>
+                    <li class="mx-3 my-1"><a href="pages/services.html" class="text-dark hover:text-primary font-medium">Services</a></li>
+                    <li class="mx-3 my-1"><a href="pages/portfolio.html" class="text-dark hover:text-primary font-medium">Portfolio</a></li>
+                    <li class="mx-3 my-1"><a href="pages/blog.html" class="text-dark hover:text-primary font-medium">Blog</a></li>
+                    <li class="mx-3 my-1"><a href="pages/faq.html" class="text-dark hover:text-primary font-medium">FAQ</a></li>
+                    <li class="mx-3 my-1"><a href="pages/contact.html" class="text-dark hover:text-primary font-medium">Contact</a></li>
                 </ul>
             </nav>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-dark hover:text-primary mx-2 text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark hover:text-primary mx-2 text-xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark hover:text-primary mx-2 text-xl"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="text-dark hover:text-primary mx-2 text-xl"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Transform Your Digital Presence & Accelerate Growth.</h1>
-            <p>MS Digital Marketing Agency drives measurable results with innovative, data-driven strategies that elevate your brand's online impact.</p>
-            <a href="pages/contact.html" class="cta-button">Schedule Your Free Consultation</a>
+    <section class="relative py-32 text-white text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero/hero-banner.svg');">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Transform Your Digital Presence & Accelerate Growth.</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8">MS Digital Marketing Agency drives measurable results with innovative, data-driven strategies that elevate your brand's online impact.</p>
+            <a href="pages/contact.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded inline-block transition duration-300">Schedule Your Free Consultation</a>
         </div>
     </section>
 
-    <section class="value-proposition">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-search"></i>
-                    <h3>SEO & Content Marketing</h3>
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+                    <i class="fas fa-search text-primary text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">SEO & Content Marketing</h3>
                     <p>Boost organic visibility and engage your audience.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-hashtag"></i>
-                    <h3>Social Media Management</h3>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+                    <i class="fas fa-hashtag text-primary text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Social Media Management</h3>
                     <p>Build authentic connections on all platforms.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-ad"></i>
-                    <h3>PPC & Paid Advertising</h3>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+                    <i class="fas fa-ad text-primary text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">PPC & Paid Advertising</h3>
                     <p>Maximize ROI with targeted ads.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Analytics & Reporting</h3>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-2">
+                    <i class="fas fa-chart-line text-primary text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Analytics & Reporting</h3>
                     <p>Data-driven insights to fuel continuous improvement.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="social-proof">
-        <div class="container">
-            <h2>Trusted by Leading Brands</h2>
-            <div class="client-logos">
-                <img src="images/logos/client1.svg" alt="Client 1" width="150" height="80">
-                <img src="images/logos/client2.svg" alt="Client 2" width="150" height="80">
-                <img src="images/logos/client3.svg" alt="Client 3" width="150" height="80">
-                <img src="images/logos/client4.svg" alt="Client 4" width="150" height="80">
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12">Trusted by Leading Brands</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 mb-12">
+                <img src="images/logos/client1.svg" alt="Client 1" class="w-32 h-16 object-contain">
+                <img src="images/logos/client2.svg" alt="Client 2" class="w-32 h-16 object-contain">
+                <img src="images/logos/client3.svg" alt="Client 3" class="w-32 h-16 object-contain">
+                <img src="images/logos/client4.svg" alt="Client 4" class="w-32 h-16 object-contain">
             </div>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <p>"MS Digital Marketing Agency increased our organic traffic by 250% in just three months."</p>
-                    <h4>- Client Name, Company</h4>
+            <div class="testimonial-slider max-w-2xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-lg italic mb-4">"MS Digital Marketing Agency increased our organic traffic by 250% in just three months."</p>
+                    <h4 class="font-bold">- Client Name, Company</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>MS Digital Marketing</h3>
-                    <p>Transform your digital presence with our innovative marketing solutions.</p>
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-primary pb-2 inline-block">MS Digital Marketing</h3>
+                    <p class="mb-4">Transform your digital presence with our innovative marketing solutions.</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-primary pb-2 inline-block">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/about.html">About Us</a></li>
-                        <li><a href="pages/services.html">Services</a></li>
-                        <li><a href="pages/portfolio.html">Portfolio</a></li>
-                        <li><a href="pages/blog.html">Blog</a></li>
-                        <li><a href="pages/contact.html">Contact</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li class="mb-2"><a href="pages/about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="pages/services.html" class="text-gray-300 hover:text-white">Services</a></li>
+                        <li class="mb-2"><a href="pages/portfolio.html" class="text-gray-300 hover:text-white">Portfolio</a></li>
+                        <li class="mb-2"><a href="pages/blog.html" class="text-gray-300 hover:text-white">Blog</a></li>
+                        <li class="mb-2"><a href="pages/contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@msdigitalmarketing.com</p>
-                    <p>Phone: +1 (XXX) XXX-XXXX</p>
-                    <p>Address: [Insert Address Here]</p>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-primary pb-2 inline-block">Contact Us</h3>
+                    <p class="mb-2">Email: contact@msdigitalmarketing.com</p>
+                    <p class="mb-2">Phone: +1 (XXX) XXX-XXXX</p>
+                    <p class="mb-2">Address: [Insert Address Here]</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-primary pb-2 inline-block">Subscribe to Our Newsletter</h3>
+                    <form class="mb-4">
+                        <input type="email" placeholder="Your Email Address" class="w-full p-2 mb-2 rounded">
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white py-2 px-4 rounded w-full transition duration-300">Subscribe</button>
                     </form>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    <div class="flex">
+                        <a href="#" class="text-gray-300 hover:text-white mr-4 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white mr-4 text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white mr-4 text-xl"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
-                <p><a href="legal/privacy-policy.html">Privacy Policy</a> | <a href="legal/terms-of-service.html">Terms of Service</a></p>
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400">
+                <p class="mb-2">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <p><a href="legal/privacy-policy.html" class="hover:text-white">Privacy Policy</a> | <a href="legal/terms-of-service.html" class="hover:text-white">Terms of Service</a></p>
             </div>
         </div>
     </footer>
