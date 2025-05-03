@@ -3,274 +3,753 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay up-to-date with the latest digital marketing trends, insights, and strategies on the MS Digital Marketing blog.">
+    <meta name="keywords" content="digital marketing blog, marketing insights, SEO tips, social media strategies, content marketing">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Blog - MS Digital Marketing Agency">
+    <meta property="og:description" content="Expert insights and trends in digital marketing to help your business grow online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/blog.html">
+    <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
     <title>Blog - MS Digital Marketing Agency</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind-config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .blog-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .blog-posts {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        .blog-post {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .blog-image {
-            height: 250px;
-            background-color: #e0e0e0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .blog-post:hover .blog-image img {
-            transform: scale(1.05);
-        }
-        
-        .blog-content {
-            padding: 20px;
-        }
-        
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .blog-meta span {
-            margin-right: 15px;
-        }
-        
-        .blog-meta i {
-            margin-right: 5px;
-        }
-        
-        .blog-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .sidebar-section {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .lead-magnet {
-            background: #f1f8ff;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-top: 40px;
-        }
-        
-        .lead-magnet h3 {
-            margin-bottom: 15px;
-        }
-        
-        @media (max-width: 768px) {
-            .blog-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MS Digital Marketing Agency</h1>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+    
+    <!-- Header with glass morphism effect -->    
+    <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->                
+                <div class="logo flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->                
+                <nav class="hidden md:block" aria-label="Main Navigation">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="../index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="about.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                About Us
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="portfolio.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Portfolio
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="blog.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors text-primary-600 dark:text-primary-400">
+                                Blog
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="faq.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                FAQ
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->                    
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Social Icons - Only show on desktop -->                    
+                    <div class="hidden md:flex items-center mr-4">
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <!-- Contact Button - Only show on desktop -->                    
+                    <a href="contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                        Get in Touch
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+            
+            <!-- Mobile Menu -->            
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-200" 
+                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-end="opacity-100 translate-y-0" 
+                x-transition:leave="transition ease-in duration-150" 
+                x-transition:leave-start="opacity-100 translate-y-0" 
+                x-transition:leave-end="opacity-0 -translate-y-4" 
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">About Us</a></li>
+                        <li><a href="services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="portfolio.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Portfolio</a></li>
+                        <li><a href="blog.html" class="block px-3 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400 font-medium">Blog</a></li>
+                        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">FAQ</a></li>
+                        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    
+    <!-- Accessible skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
+        Skip to content
+    </a>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Blog & Resources</h1>
+    <!-- Page header with modern design -->
+    <section class="relative py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Blog & Resources</h1>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto">
+                    Our blog provides the latest insights, trends, and actionable tips in digital marketing. 
+                    Stay informed with our expert content designed to help you navigate the fast-changing digital landscape.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section class="blog-overview">
-        <div class="container">
-            <p>Our blog provides the latest insights, trends, and actionable tips in digital marketing. Stay informed with our expert content designed to help you navigate the fast-changing digital landscape.</p>
-            
-            <div class="blog-container">
-                <div class="blog-posts">
-                    <div class="blog-post">
-                        <div class="blog-image">
-                            <img src="../images/blog/blog1.svg" alt="Digital Marketing Trends">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> June 15, 2025</span>
-                                <span><i class="far fa-user"></i> Madinatu Seidu</span>
-                                <span><i class="far fa-folder"></i> Digital Marketing</span>
+    <!-- Main blog content area -->
+    <section id="main-content" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <!-- Blog grid layout -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main content area -->
+                <div class="lg:col-span-2 space-y-10">
+                    <!-- Blog post 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="../images/blog/blog1.svg" alt="Digital Marketing Trends" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Digital Marketing
                             </div>
-                            <h3>5 Digital Marketing Trends You Can't Ignore in 2025</h3>
-                            <p>From AI innovations to new social media strategies, discover the trends shaping the future of digital marketing.</p>
-                            <a href="#" class="cta-button">Read More</a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4 space-x-4">
+                                <span class="flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>
+                                    June 15, 2025
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="far fa-user mr-2"></i>
+                                    Madinatu Seidu
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="far fa-comments mr-2"></i>
+                                    12 Comments
+                                </span>
+                            </div>
+                            <h2 class="text-2xl font-bold mb-3 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                5 Digital Marketing Trends You Can't Ignore in 2025
+                            </h2>
+                            <p class="text-gray-600 dark:text-gray-300 mb-5">
+                                From AI innovations to new social media strategies, discover the trends shaping the future of digital marketing. Learn how to stay ahead of the competition with these cutting-edge approaches.
+                            </p>
+                            <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                                Read More
+                                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                     
-                    <div class="blog-post">
-                        <div class="blog-image">
-                            <img src="../images/blog/blog2.svg" alt="SEO Optimization">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> June 10, 2025</span>
-                                <span><i class="far fa-user"></i> Amanda Dufie</span>
-                                <span><i class="far fa-folder"></i> SEO</span>
+                    <!-- Blog post 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="../images/blog/blog2.svg" alt="SEO Optimization" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-secondary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                SEO
                             </div>
-                            <h3>How to Optimize Your Website for SEO in 2025</h3>
-                            <p>A comprehensive guide to boosting your organic rankings with proven SEO techniques.</p>
-                            <a href="#" class="cta-button">Read More</a>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4 space-x-4">
+                                <span class="flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>
+                                    June 10, 2025
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="far fa-user mr-2"></i>
+                                    Amanda Dufie
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="far fa-comments mr-2"></i>
+                                    8 Comments
+                                </span>
+                            </div>
+                            <h2 class="text-2xl font-bold mb-3 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                How to Optimize Your Website for SEO in 2025
+                            </h2>
+                            <p class="text-gray-600 dark:text-gray-300 mb-5">
+                                A comprehensive guide to boosting your organic rankings with proven SEO techniques. Discover the latest algorithms changes and how to adapt your strategy for maximum visibility.
+                            </p>
+                            <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                                Read More
+                                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                     
-                    <div class="blog-post">
-                        <div class="blog-image">
-                            <img src="../images/blog/blog3.svg" alt="Social Media Marketing">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> June 5, 2025</span>
-                                <span><i class="far fa-user"></i> Madinatu Seidu</span>
-                                <span><i class="far fa-folder"></i> Social Media</span>
+                    <!-- Blog post 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="../images/blog/blog3.svg" alt="Social Media Marketing" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Social Media
                             </div>
-                            <h3>Mastering Social Media Marketing: Strategies for 2025</h3>
-                            <p>Learn the latest tactics and tools to build a powerful social media presence for your brand.</p>
-                            <a href="#" class="cta-button">Read More</a>
                         </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4 space-x-4">
+                                <span class="flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>
+                                    June 5, 2025
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="far fa-user mr-2"></i>
+                                    Madinatu Seidu
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="far fa-comments mr-2"></i>
+                                    15 Comments
+                                </span>
+                            </div>
+                            <h2 class="text-2xl font-bold mb-3 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                Mastering Social Media Marketing: Strategies for 2025
+                            </h2>
+                            <p class="text-gray-600 dark:text-gray-300 mb-5">
+                                Learn the latest tactics and tools to build a powerful social media presence for your brand. Discover how to create engaging content that resonates with your audience and drives conversions.
+                            </p>
+                            <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                                Read More
+                                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-10" data-aos="fade-up">
+                        <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                <span class="sr-only">Previous</span>
+                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-current="page" class="z-10 bg-primary-50 dark:bg-primary-900/20 border-primary-500 dark:border-primary-500 text-primary-600 dark:text-primary-400 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                1
+                            </a>
+                            <a href="#" class="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                2
+                            </a>
+                            <a href="#" class="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                3
+                            </a>
+                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                <span class="sr-only">Next</span>
+                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </nav>
                     </div>
                 </div>
                 
-                <div class="blog-sidebar">
-                    <div class="sidebar-section">
-                        <h3>Categories</h3>
-                        <ul>
-                            <li><a href="#">Digital Marketing</a></li>
-                            <li><a href="#">SEO</a></li>
-                            <li><a href="#">Content Marketing</a></li>
-                            <li><a href="#">Social Media</a></li>
-                            <li><a href="#">PPC Advertising</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Analytics</a></li>
+                <!-- Sidebar -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Search Bar -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md" data-aos="fade-up">
+                        <h3 class="text-lg font-bold mb-4 dark:text-white">Search</h3>
+                        <div class="relative">
+                            <input type="text" class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 py-2 px-4 pr-10 text-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Search articles...">
+                            <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-lg font-bold mb-4 dark:text-white">Categories</h3>
+                        <ul class="space-y-2">
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        Digital Marketing
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">24</span>
+                                </a>
+                            </li>
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        SEO
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">18</span>
+                                </a>
+                            </li>
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        Content Marketing
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">15</span>
+                                </a>
+                            </li>
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        Social Media
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">21</span>
+                                </a>
+                            </li>
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        PPC Advertising
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">9</span>
+                                </a>
+                            </li>
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 border-b border-gray-100 dark:border-gray-700">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        Email Marketing
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">12</span>
+                                </a>
+                            </li>
+                            <li class="transition-colors">
+                                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                                        Analytics
+                                    </span>
+                                    <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full px-2 py-1">7</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     
-                    <div class="sidebar-section">
-                        <h3>Popular Posts</h3>
-                        <ul>
-                            <li><a href="#">The Ultimate Guide to Content Marketing</a></li>
-                            <li><a href="#">How to Create a Successful PPC Campaign</a></li>
-                            <li><a href="#">10 Tips for Better Email Marketing</a></li>
-                            <li><a href="#">Understanding Google Analytics 4</a></li>
+                    <!-- Popular Posts -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-lg font-bold mb-4 dark:text-white">Popular Posts</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="flex group">
+                                    <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="../images/blog/blog-thumb1.svg" alt="Content Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">The Ultimate Guide to Content Marketing</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">June 1, 2025</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex group">
+                                    <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="../images/blog/blog-thumb2.svg" alt="PPC Campaign" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">How to Create a Successful PPC Campaign</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">May 25, 2025</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex group">
+                                    <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="../images/blog/blog-thumb3.svg" alt="Email Marketing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">10 Tips for Better Email Marketing</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">May 18, 2025</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex group">
+                                    <div class="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 mr-4">
+                                        <img src="../images/blog/blog-thumb4.svg" alt="Google Analytics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Understanding Google Analytics 4</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">May 10, 2025</p>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="lead-magnet">
-        <div class="container">
-            <h2>Download our FREE eBook</h2>
-            <h3>"The Ultimate Digital Marketing Toolkit"</h3>
-            <p>Get instant access to our comprehensive guide filled with tools, tips, and strategies to boost your digital marketing efforts.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your Email Address">
-                <button type="submit">Get Free eBook</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>MS Digital Marketing</h3>
-                    <p>Transform your digital presence with our innovative marketing solutions.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@msdigitalmarketing.com</p>
-                    <p>Phone: +1 (XXX) XXX-XXXX</p>
-                    <p>Address: [Insert Address Here]</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    
+                    <!-- Tags -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-lg font-bold mb-4 dark:text-white">Tags</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#marketing</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#seo</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#socialmedia</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#contentmarketing</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#ppc</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#analytics</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#trends</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#strategy</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#email</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">#digitalmarketing</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
-                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+        </div>
+    </section>
+
+    <!-- Newsletter/Lead Magnet Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-600/90 to-secondary-600/90 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-12 flex items-center">
+                        <div>
+                            <div class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                                Free Resource
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Download our FREE eBook</h2>
+                            <h3 class="text-xl font-semibold mb-4 text-primary-600 dark:text-primary-400">"The Ultimate Digital Marketing Toolkit"</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Get instant access to our comprehensive guide filled with tools, tips, and strategies to boost your digital marketing efforts.</p>
+                            <form class="space-y-4">
+                                <div>
+                                    <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white">
+                                </div>
+                                <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors shadow-md hover:shadow-lg">
+                                    Get Free eBook
+                                </button>
+                            </form>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block relative bg-gradient-to-br from-primary-500 to-secondary-500 p-12">
+                        <!-- Decorative elements -->
+                        <div class="absolute top-8 right-8 w-16 h-16 bg-white/20 rounded-full"></div>
+                        <div class="absolute bottom-12 left-6 w-24 h-24 bg-white/10 rounded-full"></div>
+                        
+                        <div class="relative z-10 h-full flex flex-col justify-center">
+                            <div class="text-white mb-8">
+                                <div class="text-4xl font-bold mb-2">200+</div>
+                                <div class="text-white/80">Marketing tools and resources</div>
+                            </div>
+                            <div class="text-white mb-8">
+                                <div class="text-4xl font-bold mb-2">50+</div>
+                                <div class="text-white/80">Ready-to-use templates</div>
+                            </div>
+                            <div class="text-white">
+                                <div class="text-4xl font-bold mb-2">24/7</div>
+                                <div class="text-white/80">Access to all content</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                <!-- Company info column -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">
+                            MS
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Digital Marketing</h3>
+                    </div>
+                    <p class="mb-6 text-gray-300 max-w-sm">
+                        Transform your digital presence with our innovative marketing solutions. We help businesses grow through data-driven strategies and creative execution.
+                    </p>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links columns -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Pages
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Blog</a></li>
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>FAQ</a></li>
+                        <li><a href="../legal/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Privacy Policy</a></li>
+                        <li><a href="../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact info column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email:</p>
+                                <a href="mailto:contact@msdigitalmarketing.com" class="text-white hover:text-primary-400 transition-colors">contact@msdigitalmarketing.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-phone-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Phone:</p>
+                                <a href="tel:+1XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Address:</p>
+                                <p class="text-white">[Insert Address Here]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent flex-grow text-white">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-r-lg transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="../legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="../legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
     <script src="../js/main.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Check for dark mode preference
+        document.addEventListener('alpine:init', () => {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('body').__x.$data.darkMode = true;
+            }
+        });
+        
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,226 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find answers to common questions about MS Digital Marketing Agency's services, process, and expertise.">
+    <meta name="keywords" content="digital marketing FAQ, marketing questions, SEO questions, digital marketing help, MS Digital Marketing">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="FAQ - MS Digital Marketing Agency">
+    <meta property="og:description" content="Find answers to your questions about our digital marketing services and approach.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/faq.html">
+    <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
     <title>FAQ - MS Digital Marketing Agency</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind-config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .faq-container {
-            margin-top: 40px;
-        }
-        
-        .faq-item {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-question:hover {
-            background-color: #f1f8ff;
-        }
-        
-        .faq-question::after {
-            content: '\f107';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            transition: transform 0.3s ease;
-        }
-        
-        .faq-item.active .faq-question::after {
-            transform: rotate(180deg);
-        }
-        
-        .faq-item.active .faq-question {
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 500px;
-        }
-    </style>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MS Digital Marketing Agency</h1>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+    
+    <!-- Header with glass morphism effect -->    
+    <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->                
+                <div class="logo flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->                
+                <nav class="hidden md:block" aria-label="Main Navigation">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="../index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="about.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                About Us
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="portfolio.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Portfolio
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="blog.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Blog
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="faq.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors text-primary-600 dark:text-primary-400">
+                                FAQ
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->                    
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Social Icons - Only show on desktop -->                    
+                    <div class="hidden md:flex items-center mr-4">
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <!-- Contact Button - Only show on desktop -->                    
+                    <a href="contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                        Get in Touch
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+            
+            <!-- Mobile Menu -->            
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-200" 
+                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-end="opacity-100 translate-y-0" 
+                x-transition:leave="transition ease-in duration-150" 
+                x-transition:leave-start="opacity-100 translate-y-0" 
+                x-transition:leave-end="opacity-0 -translate-y-4" 
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">About Us</a></li>
+                        <li><a href="services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="portfolio.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Portfolio</a></li>
+                        <li><a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Blog</a></li>
+                        <li><a href="faq.html" class="block px-3 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-primary-600 dark:text-primary-400 font-medium">FAQ</a></li>
+                        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    
+    <!-- Accessible skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
+        Skip to content
+    </a>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Frequently Asked Questions</h1>
+    <!-- Page header with modern design -->
+    <section class="relative py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Frequently Asked Questions</h1>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto">
+                    Find answers to common questions about our services, process, and expertise.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section class="faq-section">
-        <div class="container">
-            <p>Find answers to common questions about our services, process, and expertise.</p>
-            
-            <div class="faq-container">
-                <div class="faq-item active">
-                    <div class="faq-question">What services does MS Digital Marketing Agency offer?</div>
-                    <div class="faq-answer">
+    <!-- FAQ Accordion Section -->
+    <section id="main-content" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <!-- FAQ accordion -->
+            <div class="max-w-3xl mx-auto space-y-6" x-data="{ activeTab: 1 }">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up">
+                    <button 
+                        @click="activeTab === 1 ? activeTab = null : activeTab = 1"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 1}"
+                        aria-expanded="true"
+                    >
+                        <span class="text-lg">What services does MS Digital Marketing Agency offer?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 1}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 1" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>We provide a full spectrum of digital marketing services, including SEO, PPC, Social Media Marketing, Content Creation, and Analytics. Our comprehensive approach ensures that all aspects of your digital marketing strategy work together cohesively to achieve your business goals.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How do you measure the success of your campaigns?</div>
-                    <div class="faq-answer">
+                <!-- FAQ Item 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <button 
+                        @click="activeTab === 2 ? activeTab = null : activeTab = 2"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 2}"
+                        aria-expanded="false"
+                    >
+                        <span class="text-lg">How do you measure the success of your campaigns?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 2}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 2" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>We rely on detailed analytics and reporting to track key metrics such as traffic, engagement, conversions, and ROI. Each campaign has specific KPIs that align with your business objectives, and we provide regular reports that showcase progress and areas for optimization. Our transparent approach ensures you always know exactly how your marketing investment is performing.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">What industries do you serve?</div>
-                    <div class="faq-answer">
+                <!-- FAQ Item 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <button 
+                        @click="activeTab === 3 ? activeTab = null : activeTab = 3"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 3}"
+                        aria-expanded="false"
+                    >
+                        <span class="text-lg">What industries do you serve?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 3}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 3" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>We work with a diverse range of industries, including retail, technology, healthcare, education, finance, real estate, hospitality, non-profit, entertainment, and manufacturing. Our team has specialized knowledge across various sectors, allowing us to develop tailored strategies that address the unique challenges and opportunities in your specific industry.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How can I get a custom quote?</div>
-                    <div class="faq-answer">
+                <!-- FAQ Item 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <button 
+                        @click="activeTab === 4 ? activeTab = null : activeTab = 4"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 4}"
+                        aria-expanded="false"
+                    >
+                        <span class="text-lg">How can I get a custom quote?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 4}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 4" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>Simply fill out our contact form or call us directly for a personalized consultation. We'll arrange a discovery call to understand your business goals, challenges, and budget. Based on this information, we'll create a customized proposal that outlines our recommended strategies, timeline, and investment. There's no obligation, and we're happy to answer any questions you may have about our approach.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How long does it take to see results from digital marketing?</div>
-                    <div class="faq-answer">
+                <!-- FAQ Item 5 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="400">
+                    <button 
+                        @click="activeTab === 5 ? activeTab = null : activeTab = 5"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 5}"
+                        aria-expanded="false"
+                    >
+                        <span class="text-lg">How long does it take to see results from digital marketing?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 5}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 5" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>The timeline for results varies based on the specific strategies employed and your starting point. Some tactics like PPC advertising can drive immediate traffic, while SEO typically requires 3-6 months to show significant improvements. Social media engagement might build steadily over several months. During our initial consultation, we'll provide realistic expectations based on your specific goals and competitive landscape.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">Do you require long-term contracts?</div>
-                    <div class="faq-answer">
+                <!-- FAQ Item 6 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="500">
+                    <button 
+                        @click="activeTab === 6 ? activeTab = null : activeTab = 6"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 6}"
+                        aria-expanded="false"
+                    >
+                        <span class="text-lg">Do you require long-term contracts?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 6}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 6" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>While we recommend a minimum commitment of 3-6 months for most strategies to demonstrate meaningful results, we offer flexible engagement options. We believe in earning your business through results, not contractual obligations. Many of our clients choose to partner with us long-term because of the value we provide, but we also offer project-based engagements for specific initiatives.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How do you stay current with digital marketing trends?</div>
-                    <div class="faq-answer">
+                <!-- FAQ Item 7 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="600">
+                    <button 
+                        @click="activeTab === 7 ? activeTab = null : activeTab = 7"
+                        class="flex justify-between items-center w-full px-6 py-5 text-left font-bold focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset transition-colors dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                        :class="{'bg-gray-50 dark:bg-gray-700/50': activeTab === 7}"
+                        aria-expanded="false"
+                    >
+                        <span class="text-lg">How do you stay current with digital marketing trends?</span>
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 transform transition-transform duration-300" :class="{'rotate-180': activeTab === 7}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div 
+                        x-show="activeTab === 7" 
+                        x-transition:enter="transition ease-out duration-200" 
+                        x-transition:enter-start="opacity-0 -translate-y-4" 
+                        x-transition:enter-end="opacity-100 translate-y-0" 
+                        x-transition:leave="transition ease-in duration-150" 
+                        x-transition:leave-start="opacity-100 translate-y-0" 
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="px-6 pb-6 text-gray-600 dark:text-gray-300"
+                    >
                         <p>Our team invests in continuous education through industry certifications, conferences, workshops, and thought leadership. We closely monitor algorithm updates, platform changes, and emerging technologies. This commitment to staying at the forefront of digital marketing ensures our strategies remain innovative and effective in an ever-changing landscape.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="cta-container" style="text-align: center; margin-top: 40px;">
-                <h3>Didn't find your answer?</h3>
-                <p>Contact us directly and we'll be happy to help.</p>
-                <a href="contact.html" class="cta-button">Get in Touch</a>
+            <!-- Contact CTA -->
+            <div class="max-w-3xl mx-auto mt-16 bg-white dark:bg-gray-800 rounded-xl p-8 text-center shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="700">
+                <h3 class="text-2xl font-bold mb-2 dark:text-white">Didn't find your answer?</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">Contact us directly and we'll be happy to help.</p>
+                <a href="contact.html" class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span>Get in Touch</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>MS Digital Marketing</h3>
-                    <p>Transform your digital presence with our innovative marketing solutions.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@msdigitalmarketing.com</p>
-                    <p>Phone: +1 (XXX) XXX-XXXX</p>
-                    <p>Address: [Insert Address Here]</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- FAQ Categories -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold mb-10 text-center font-display dark:text-white" data-aos="fade-up">Browse by Topic</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Topic 1 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600 dark:text-primary-400">
+                            <i class="fas fa-cogs text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Services & Pricing</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Information about our service offerings, packages, and pricing structure.</p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center">
+                            <span>View FAQs</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Topic 2 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-secondary-100 dark:bg-secondary-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-secondary-600 dark:text-secondary-400">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Results & Reporting</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">How we measure success, report results, and optimize for better performance.</p>
+                        <a href="#" class="text-secondary-600 dark:text-secondary-400 font-medium hover:text-secondary-700 dark:hover:text-secondary-300 inline-flex items-center">
+                            <span>View FAQs</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Topic 3 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600 dark:text-primary-400">
+                            <i class="fas fa-file-contract text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Policies & Terms</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Information about our contracts, policies, and working relationship.</p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center">
+                            <span>View FAQs</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
-                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+        </div>
+    </section>
+
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                <!-- Company info column -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">
+                            MS
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Digital Marketing</h3>
+                    </div>
+                    <p class="mb-6 text-gray-300 max-w-sm">
+                        Transform your digital presence with our innovative marketing solutions. We help businesses grow through data-driven strategies and creative execution.
+                    </p>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links columns -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Pages
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Blog</a></li>
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>FAQ</a></li>
+                        <li><a href="../legal/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Privacy Policy</a></li>
+                        <li><a href="../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact info column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email:</p>
+                                <a href="mailto:contact@msdigitalmarketing.com" class="text-white hover:text-primary-400 transition-colors">contact@msdigitalmarketing.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-phone-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Phone:</p>
+                                <a href="tel:+1XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Address:</p>
+                                <p class="text-white">[Insert Address Here]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent flex-grow text-white">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-r-lg transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="../legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="../legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
     <script src="../js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Check for dark mode preference
+        document.addEventListener('alpine:init', () => {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('body').__x.$data.darkMode = true;
+            }
+        });
+        
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
             
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    item.classList.toggle('active');
-                });
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
