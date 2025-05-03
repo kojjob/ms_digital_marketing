@@ -4,188 +4,807 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn about MS Digital Marketing Agency's team, mission, and values. We help businesses transform their digital presence.">
+    <meta name="keywords" content="digital marketing team, marketing agency, marketing experts, about us, marketing mission, values">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="About Us - MS Digital Marketing Agency">
+    <meta property="og:description" content="Learn about our team of digital marketing experts and our mission to transform your brand's online presence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/about.html">
+    <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
     <title>About Us - MS Digital Marketing Agency</title>
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#0077cc',
-              secondary: '#005299',
-              dark: '#222',
-              light: '#f9f9f9',
-            },
-            fontFamily: {
-              sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
-            },
-          }
-        }
-      }
-    </script>
+    <script src="../js/tailwind-config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MS Digital Marketing Agency</h1>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+    
+    <!-- Header with glass morphism effect -->    
+    <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->                
+                <div class="logo flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->                
+                <nav class="hidden md:block" aria-label="Main Navigation">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="../index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="about.html" class="block px-3 py-2 text-primary-600 dark:text-primary-400 font-medium transition-colors border-b-2 border-primary-600 dark:border-primary-400">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="portfolio.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Portfolio
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="blog.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Blog
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="faq.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                FAQ
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->                    
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Social Icons - Only show on desktop -->                    
+                    <div class="hidden md:flex items-center mr-4">
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <!-- Contact Button - Only show on desktop -->                    
+                    <a href="contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+                        Get in Touch
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+            
+            <!-- Mobile Menu -->            
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-200" 
+                x-transition:enter-start="opacity-0 -translate-y-4" 
+                x-transition:enter-end="opacity-100 translate-y-0" 
+                x-transition:leave="transition ease-in duration-150" 
+                x-transition:leave-start="opacity-100 translate-y-0" 
+                x-transition:leave-end="opacity-0 -translate-y-4" 
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="about.html" class="block px-3 py-2 rounded-md bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-medium">About Us</a></li>
+                        <li><a href="services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="portfolio.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Portfolio</a></li>
+                        <li><a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Blog</a></li>
+                        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">FAQ</a></li>
+                        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-3">
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    
+    <!-- Accessible skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
+        Skip to content
+    </a>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>About Us</h1>
+    <section class="relative py-24 md:py-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero/hero-banner.svg');" id="main-content">
+        <div class="absolute inset-0 bg-primary-600/20 mix-blend-multiply"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display" data-aos="fade-up">
+                About Us
+            </h1>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Get to know the team behind MS Digital Marketing and our mission to transform businesses through innovative digital strategies
+            </p>
         </div>
     </section>
 
-    <section class="our-story">
-        <div class="container">
-            <h2>Our Story</h2>
-            <p>MS Digital Marketing Agency was founded with a passion for transforming brands through digital innovation. Our mission is to empower businesses of all sizes to succeed online by harnessing the latest technology and creative strategies. With years of industry experience, our team is dedicated to delivering measurable results and fostering long-term partnerships.</p>
-        </div>
-    </section>
-
-    <section class="our-team">
-        <div class="container">
-            <h2>Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="../images/team/madinatu-seidu.svg" alt="Madinatu Seidu" width="150" height="150" style="border-radius: 50%;">
+    <section class="py-20 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 dark:bg-primary-900/20 rounded-full -z-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-100/50 dark:bg-secondary-900/20 rounded-full -z-10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Left side: Story content -->
+                <div data-aos="fade-right">
+                    <div class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                        Our Journey
                     </div>
-                    <h3>Madinatu Seidu</h3>
-                    <p class="title">Founder & CEO</p>
-                    <p>A digital visionary with years of experience.</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="../images/team/amanda-dufie.svg" alt="Amanda Dufie" width="150" height="150" style="border-radius: 50%;">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-display dark:text-white">Our Story</h2>
+                    <div class="prose prose-lg dark:prose-invert">
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            MS Digital Marketing Agency was founded with a passion for transforming brands through digital innovation. Our mission is to empower businesses of all sizes to succeed online by harnessing the latest technology and creative strategies.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            With years of industry experience, our team is dedicated to delivering measurable results and fostering long-term partnerships. We believe in a data-driven approach that combines creativity with analytics to drive real business growth.
+                        </p>
                     </div>
-                    <h3>Amanda Dufie</h3>
-                    <p class="title">Head of Strategy</p>
-                    <p>Expert in data analytics and market trends.</p>
                 </div>
-                <!-- Additional team members would go here -->
-            </div>
-        </div>
-    </section>
-
-    <section class="core-values">
-        <div class="container">
-            <h2>Core Values & Culture</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovation</h3>
-                    <p>Constantly exploring fresh ideas and creative solutions.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Transparency</h3>
-                    <p>We have Open communication and clear reporting with our clients.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-users"></i>
-                    <h3>Collaboration</h3>
-                    <p>Working together to achieve outstanding results.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-award"></i>
-                    <h3>Excellence</h3>
-                    <p>Commitment to delivering the highest quality work.</p>
+                
+                <!-- Right side: Image or graphic -->
+                <div class="relative" data-aos="fade-left">
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary-200 dark:bg-primary-900/30 rounded-full -z-10"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary-200 dark:bg-secondary-900/30 rounded-full -z-10"></div>
+                    
+                    <!-- Image with border effect -->
+                    <div class="relative overflow-hidden rounded-xl border-8 border-white dark:border-gray-800 shadow-xl">
+                        <div class="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700">
+                            <div class="p-8 flex items-center justify-center h-full">
+                                <div class="text-center">
+                                    <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-white text-3xl font-bold mb-4">
+                                        MS
+                                    </div>
+                                    <div class="text-xl font-bold dark:text-white">Established 2020</div>
+                                    <p class="text-gray-500 dark:text-gray-400">Transforming Digital Presence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="why-choose-us">
-        <div class="container">
-            <h2>Why Choose Us</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Proven Success</h3>
-                    <p>Our case studies and client testimonials speak for themselves.</p>
+    <section class="py-20 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00ek0yNCAzMmMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAx,Ljc5IDQgNCA0IDQtMS43OSA0LTR6bTI0IDBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+');"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section header -->
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="inline-block py-1 px-3 mb-4 rounded-full bg-secondary-50 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 text-sm font-semibold">
+                    Meet Our Experts
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Customized Strategies</h3>
-                    <p>Every business is unique and so are our tailored strategies.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display dark:text-white">Our Leadership Team</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    With decades of combined experience, our team brings creative solutions and data-driven strategies to every project
+                </p>
+            </div>
+            
+            <!-- Team grid with modern hover effects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Madinatu Seidu -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-xl p-6 text-center">
+                        <!-- Image container with effect -->
+                        <div class="relative mx-auto w-40 h-40 mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 dark:ring-primary-900/30 group-hover:ring-primary-500 transition-all duration-300">
+                            <img src="../images/team/madinatu-seidu.svg" alt="Madinatu Seidu" class="w-full h-full object-cover">
+                            
+                            <!-- Hover overlay with social icons -->
+                            <div class="absolute inset-0 bg-primary-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-3">
+                                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary-500 hover:bg-gray-100 transition-colors" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary-500 hover:bg-gray-100 transition-colors" aria-label="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Team member info -->
+                        <h3 class="text-xl font-bold mb-1 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Madinatu Seidu</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Founder & CEO</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">A digital visionary with years of experience leading innovative marketing campaigns for global brands.</p>
+                        
+                        <!-- Skills badges -->
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Strategy</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Leadership</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Innovation</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-tools"></i>
-                    <h3>Comprehensive Service</h3>
-                    <p>From SEO to social media, we offer full-funnel digital marketing.</p>
+                
+                <!-- Amanda Dufie -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-xl p-6 text-center">
+                        <!-- Image container with effect -->
+                        <div class="relative mx-auto w-40 h-40 mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 dark:ring-primary-900/30 group-hover:ring-primary-500 transition-all duration-300">
+                            <img src="../images/team/amanda-dufie.svg" alt="Amanda Dufie" class="w-full h-full object-cover">
+                            
+                            <!-- Hover overlay with social icons -->
+                            <div class="absolute inset-0 bg-primary-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-3">
+                                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary-500 hover:bg-gray-100 transition-colors" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary-500 hover:bg-gray-100 transition-colors" aria-label="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Team member info -->
+                        <h3 class="text-xl font-bold mb-1 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Amanda Dufie</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Head of Strategy</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Expert in data analytics and market trends with a proven track record of developing successful digital strategies.</p>
+                        
+                        <!-- Skills badges -->
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Analytics</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Strategy</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Research</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional team member template -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-xl p-6 text-center">
+                        <!-- Image container with effect -->
+                        <div class="relative mx-auto w-40 h-40 mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 dark:ring-primary-900/30 group-hover:ring-primary-500 transition-all duration-300 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                            <span class="text-4xl font-bold text-gray-400 dark:text-gray-500">JD</span>
+                            
+                            <!-- Hover overlay with social icons -->
+                            <div class="absolute inset-0 bg-primary-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-3">
+                                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary-500 hover:bg-gray-100 transition-colors" aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-primary-500 hover:bg-gray-100 transition-colors" aria-label="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Team member info -->
+                        <h3 class="text-xl font-bold mb-1 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">John Doe</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Creative Director</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Award-winning designer with expertise in brand identity, UI/UX, and creative campaign development.</p>
+                        
+                        <!-- Skills badges -->
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Design</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Branding</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">UX/UI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Join the team CTA -->
+            <div class="text-center mt-16" data-aos="fade-up">
+                <a href="contact.html" class="inline-flex items-center bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 border border-gray-200 dark:border-gray-700">
+                    <span>Join Our Team</span>
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-gray-50 to-transparent dark:from-gray-800/50 dark:to-transparent -z-10"></div>
+        <div class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-gray-50 to-transparent dark:from-gray-800/50 dark:to-transparent -z-10"></div>
+        
+        <div class="container mx-auto px-4">
+            <!-- Section header -->
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                    Our Foundation
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display dark:text-white">
+                    Core Values & Culture
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg">
+                    The principles that guide our work and shape our company culture
+                </p>
+            </div>
+            
+            <!-- Values in interactive cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Innovation -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-lg"></div>
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 p-8 shadow-lg group-hover:shadow-xl group-hover:shadow-primary-500/20 transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full z-10">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        
+                        <!-- Icon -->
+                        <div class="w-16 h-16 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 transform group-hover:-rotate-12 transition-transform duration-300">
+                            <i class="fas fa-lightbulb text-2xl"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mb-4 dark:text-white">Innovation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Constantly exploring fresh ideas and creative solutions to stay ahead of trends and deliver cutting-edge results for our clients.</p>
+                    </div>
+                </div>
+                
+                <!-- Transparency -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-lg"></div>
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 p-8 shadow-lg group-hover:shadow-xl group-hover:shadow-primary-500/20 transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full z-10">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        
+                        <!-- Icon -->
+                        <div class="w-16 h-16 rounded-xl bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center text-secondary-600 dark:text-secondary-400 mb-6 transform group-hover:-rotate-12 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mb-4 dark:text-white">Transparency</h3>
+                        <p class="text-gray-600 dark:text-gray-300">We maintain open communication and provide clear reporting with our clients, ensuring they understand every aspect of our strategy and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Collaboration -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-lg"></div>
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 p-8 shadow-lg group-hover:shadow-xl group-hover:shadow-primary-500/20 transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full z-10">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        
+                        <!-- Icon -->
+                        <div class="w-16 h-16 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 transform group-hover:-rotate-12 transition-transform duration-300">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mb-4 dark:text-white">Collaboration</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Working together as a team and with our clients to achieve outstanding results. We believe the best ideas come from diverse perspectives.</p>
+                    </div>
+                </div>
+                
+                <!-- Excellence -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-lg"></div>
+                    <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 p-8 shadow-lg group-hover:shadow-xl group-hover:shadow-primary-500/20 transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full z-10">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        
+                        <!-- Icon -->
+                        <div class="w-16 h-16 rounded-xl bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center text-secondary-600 dark:text-secondary-400 mb-6 transform group-hover:-rotate-12 transition-transform duration-300">
+                            <i class="fas fa-award text-2xl"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mb-4 dark:text-white">Excellence</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Commitment to delivering the highest quality work in everything we do. We're never satisfied with "good enough" and always strive to exceed expectations.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>MS Digital Marketing</h3>
-                    <p>Transform your digital presence with our innovative marketing solutions.</p>
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
+        <!-- Background decorations -->
+        <div class="absolute left-0 top-1/3 w-64 h-64 bg-primary-200/30 dark:bg-primary-900/20 rounded-full -z-10 blur-3xl"></div>
+        <div class="absolute right-0 bottom-1/3 w-64 h-64 bg-secondary-200/30 dark:bg-secondary-900/20 rounded-full -z-10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Left side: Image/Stats -->
+                <div class="relative" data-aos="fade-right">
+                    <!-- Stats with overlay -->
+                    <div class="relative rounded-xl overflow-hidden bg-white dark:bg-gray-800 shadow-xl p-6 border border-gray-100 dark:border-gray-700">
+                        <!-- Background pattern -->
+                        <div class="absolute inset-0 opacity-5">
+                            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5" />
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#smallGrid)" />
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-6 text-center dark:text-white">Our Track Record</h3>
+                        
+                        <!-- Stats grid -->
+                        <div class="grid grid-cols-2 gap-6 mb-6">
+                            <!-- Stat 1 -->
+                            <div class="text-center p-4 rounded-lg bg-primary-50 dark:bg-primary-900/30">
+                                <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2 counter-value" data-target="250">250</div>
+                                <div class="text-gray-700 dark:text-gray-300 font-medium">Clients Served</div>
+                            </div>
+                            
+                            <!-- Stat 2 -->
+                            <div class="text-center p-4 rounded-lg bg-secondary-50 dark:bg-secondary-900/30">
+                                <div class="text-4xl font-bold text-secondary-600 dark:text-secondary-400 mb-2 counter-value" data-target="500">500</div>
+                                <div class="text-gray-700 dark:text-gray-300 font-medium">Projects Completed</div>
+                            </div>
+                            
+                            <!-- Stat 3 -->
+                            <div class="text-center p-4 rounded-lg bg-secondary-50 dark:bg-secondary-900/30">
+                                <div class="text-4xl font-bold text-secondary-600 dark:text-secondary-400 mb-2 counter-value" data-target="8">8</div>
+                                <div class="text-gray-700 dark:text-gray-300 font-medium">Years of Experience</div>
+                            </div>
+                            
+                            <!-- Stat 4 -->
+                            <div class="text-center p-4 rounded-lg bg-primary-50 dark:bg-primary-900/30">
+                                <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2 counter-value" data-target="15">15</div>
+                                <div class="text-gray-700 dark:text-gray-300 font-medium">Industry Awards</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Industries served tags -->
+                        <div class="text-center">
+                            <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-3">Industries Served</h4>
+                            <div class="flex flex-wrap justify-center gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Retail</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Technology</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Healthcare</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Education</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Finance</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Real Estate</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                
+                <!-- Right side: Why Choose Us content -->
+                <div data-aos="fade-left">
+                    <div class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold">
+                        Our Difference
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-display dark:text-white">Why Choose Us</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Feature 1 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1 mr-4">
+                                <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Proven Success</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Our case studies and client testimonials speak for themselves. We've consistently delivered measurable results for businesses of all sizes across various industries.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Feature 2 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1 mr-4">
+                                <div class="w-10 h-10 rounded-full bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center text-secondary-600 dark:text-secondary-400">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Customized Strategies</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Every business is unique and so are our tailored strategies. We don't believe in one-size-fits-all solutions. We take the time to understand your specific goals and develop plans that align with your vision.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Feature 3 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1 mr-4">
+                                <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Comprehensive Service</h3>
+                                <p class="text-gray-600 dark:text-gray-300">From SEO to social media, we offer full-funnel digital marketing solutions. Our integrated approach ensures all elements of your digital strategy work together cohesively to drive results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA button -->
+                    <div class="mt-8">
+                        <a href="contact.html" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            <span>Start Working With Us</span>
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action section before footer -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0 md:mr-8 text-center md:text-left" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Ready to Transform Your Digital Presence?</h2>
+                    <p class="text-white/80 text-lg max-w-xl">Let's work together to develop a winning digital strategy that drives real business results.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <a href="contact.html" class="inline-flex items-center bg-white text-primary-600 font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600">
+                        <span class="mr-2">Get Started Today</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                <!-- Company info column -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">
+                            MS
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Digital Marketing</h3>
+                    </div>
+                    <p class="mb-6 text-gray-300 max-w-sm">
+                        Transform your digital presence with our innovative marketing solutions. We help businesses grow through data-driven strategies and creative execution.
+                    </p>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links columns -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Pages
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@msdigitalmarketing.com</p>
-                    <p>Phone: +1 (XXX) XXX-XXXX</p>
-                    <p>Address: [Insert Address Here]</p>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Blog</a></li>
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>FAQ</a></li>
+                        <li><a href="../legal/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Privacy Policy</a></li>
+                        <li><a href="../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
+                    </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                
+                <!-- Contact info column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-bold mb-6 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-12 h-1 bg-primary-600"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email:</p>
+                                <a href="mailto:contact@msdigitalmarketing.com" class="text-white hover:text-primary-400 transition-colors">contact@msdigitalmarketing.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-phone-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Phone:</p>
+                                <a href="tel:+1XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mr-3 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-primary-500">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Address:</p>
+                                <p class="text-white">[Insert Address Here]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email address" class="bg-gray-800 border border-gray-700 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent flex-grow text-white">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-r-lg transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
-                <p><a href="../legal/privacy-policy.html">Privacy Policy</a> | <a href="../legal/terms-of-service.html">Terms of Service</a></p>
+            
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="../legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="../legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Check for dark mode preference
+        document.addEventListener('alpine:init', () => {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.querySelector('body').__x.$data.darkMode = true;
+            }
+        });
+        
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
