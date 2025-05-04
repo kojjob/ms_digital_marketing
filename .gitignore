@@ -25,3 +25,12 @@ yarn-error.log*
 
 # Backup files
 *.bak
+*.old
+
+# Local configuration files
+*.local.js
+*.local.json
+
+# Temporary files
+*.tmp
+.cache/

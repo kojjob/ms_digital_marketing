@@ -447,3 +447,121 @@ function initTooltips() {
         });
     });
 }
+
+// Save dark mode preference
+function toggleDarkMode(isDark) {
+    document.querySelector('body').__x.$data.darkMode = isDark;
+    localStorage.setItem('darkMode', isDark);
+}
+
+// Feature detection and fallback
+if (!('IntersectionObserver' in window)) {
+    // Load polyfill or alternative implementation
+    document.querySelectorAll('[data-animate]').forEach(el => {
+        el.classList.add('visible');
+    });
+}
+
+// Respect user's reduced motion preference
+function respectReducedMotion() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // Remove animations
+        const animatedElements = document.querySelectorAll('[data-animate], [data-aos]');
+        animatedElements.forEach(el => {
+            el.removeAttribute('data-animate');
+            el.removeAttribute('data-aos');
+            el.classList.add('visible');
+        });
+        
+        // Disable transitions
+        document.documentElement.classList.add('reduce-motion');
+    }
+}
+
+// Add scroll progress indicator
+function initScrollProgress() {
+    const progressBar = document.getElementById('progress-bar');
+    if (!progressBar) return;
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+        
+        progressBar.style.width = scrollPercentage + '%';
+        
+        // Add class when scrolled past threshold for header style change
+        const header = document.querySelector('header');
+        if (scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// Improve mobile navigation
+function enhanceMobileNavigation() {
+    const mobileMenu = document.querySelector('#mobile-menu');
+    const mobileMenuItems = mobileMenu.querySelectorAll('a');
+    
+    // Add transition delay to create staggered animation
+    mobileMenuItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 50}ms`;
+        item.classList.add('transform', 'translate-y-0', 'opacity-100');
+        
+        // Add active state indicator
+        item.addEventListener('click', () => {
+            mobileMenuItems.forEach(i => i.classList.remove('text-primary-500'));
+            item.classList.add('text-primary-500');
+        });
+    });
+}
+
+// Add skeleton loading for content
+function showSkeletonLoaders() {
+    const contentContainers = document.querySelectorAll('.content-container');
+    contentContainers.forEach(container => {
+        container.innerHTML = `
+            <div class="animate-pulse space-y-4">
+                <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
+                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-4/6"></div>
+            </div>
+        `;
+    });
+}
+
+// Add visual feedback for form fields
+const formFields = document.querySelectorAll('input, textarea, select');
+formFields.forEach(field => {
+    // Add focus state visual enhancement
+    field.addEventListener('focus', () => {
+        field.parentElement.classList.add('ring-2', 'ring-primary-300', 'ring-opacity-50');
+    });
+    
+    field.addEventListener('blur', () => {
+        field.parentElement.classList.remove('ring-2', 'ring-primary-300', 'ring-opacity-50');
+    });
+    
+    // Add validation visual feedback
+    field.addEventListener('input', () => {
+        if (field.checkValidity()) {
+            field.classList.add('border-green-500');
+            field.classList.remove('border-red-500');
+        } else if (field.value !== '') {
+            field.classList.add('border-red-500');
+            field.classList.remove('border-green-500');
+        }
+    });
+});
+
+// Add subtle hover effects to interactive elements
+const buttons = document.querySelectorAll('button, .btn, [role="button"]');
+buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        button.classList.add('scale-105');
+        setTimeout(() => button.classList.remove('scale-105'), 200);
+    });
+});

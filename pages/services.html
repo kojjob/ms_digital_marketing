@@ -13,47 +13,47 @@
     <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/services.html">
     <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
     <title>Services - MS Digital Marketing Agency</title>
-    
+
     <!-- Preconnect to resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind-config.js"></script>
-    
+
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../images/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/logos/logo-dark.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="../images/logos/logo-dark.jpeg">
     <link rel="manifest" href="../site.webmanifest">
-    
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
     <!-- Progress bar -->
     <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
-    
-    <!-- Header with glass morphism effect -->    
+
+    <!-- Header with glass morphism effect -->
     <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <!-- Logo -->                
+                <!-- Logo -->
                 <div class="logo flex items-center">
                     <a href="../index.html" class="flex items-center">
-                        <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
+                        <img src="../images/logos/logo-dark.jpeg" alt="MS Digital Marketing" class="w-10 h-10 rounded-md mr-2 object-cover">
                         <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
                     </a>
                 </div>
-                
-                <!-- Desktop Navigation -->                
+
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:block" aria-label="Main Navigation">
                     <ul class="flex">
                         <li class="group relative mx-1">
@@ -99,11 +99,11 @@
                         </li>
                     </ul>
                 </nav>
-                
-                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->
                 <div class="flex items-center">
-                    <!-- Dark Mode Toggle -->                    
-                    <button 
+                    <!-- Dark Mode Toggle -->
+                    <button
                         @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
                         class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
                         aria-label="Toggle Dark Mode"
@@ -111,23 +111,23 @@
                         <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
-                    
-                    <!-- Social Icons - Only show on desktop -->                    
+
+                    <!-- Social Icons - Only show on desktop -->
                     <div class="hidden md:flex items-center mr-4">
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
-                    
-                    <!-- Contact Button - Only show on desktop -->                    
+
+                    <!-- Contact Button - Only show on desktop -->
                     <a href="contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
                         Get in Touch
                     </a>
-                    
-                    <!-- Mobile Menu Button -->                    
-                    <button 
-                        @click="mobileMenuOpen = !mobileMenuOpen" 
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        @click="mobileMenuOpen = !mobileMenuOpen"
                         class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
                         aria-expanded="false"
                         aria-label="Open Menu"
@@ -137,16 +137,16 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Mobile Menu -->            
-            <div 
-                x-show="mobileMenuOpen" 
-                x-transition:enter="transition ease-out duration-200" 
-                x-transition:enter-start="opacity-0 -translate-y-4" 
-                x-transition:enter-end="opacity-100 translate-y-0" 
-                x-transition:leave="transition ease-in duration-150" 
-                x-transition:leave-start="opacity-100 translate-y-0" 
-                x-transition:leave-end="opacity-0 -translate-y-4" 
+
+            <!-- Mobile Menu -->
+            <div
+                x-show="mobileMenuOpen"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
                 class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
             >
                 <nav class="px-4 py-2">
@@ -171,19 +171,22 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Accessible skip to content link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
         Skip to content
     </a>
 
-    <section class="relative py-24 md:py-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero/hero-banner.svg');" id="main-content">
-        <div class="absolute inset-0 bg-primary-600/20 mix-blend-multiply"></div>
+    <section class="relative py-20 bg-gradient-to-r from-primary-600 to-primary-500 text-white overflow-hidden" id="main-content">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
         <div class="container mx-auto px-4 relative z-10 text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display" data-aos="fade-up">
                 Our Services
             </h1>
-            <p class="text-xl text-white/80 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-xl text-white/90 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Comprehensive digital marketing solutions tailored to your business needs
             </p>
         </div>
@@ -193,7 +196,7 @@
         <!-- Background decorations -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 dark:bg-primary-900/20 rounded-full -z-10 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-100/50 dark:bg-secondary-900/20 rounded-full -z-10 blur-3xl"></div>
-        
+
         <div class="container mx-auto px-4">
             <!-- Section intro -->
             <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
@@ -213,7 +216,7 @@
         <div class="absolute inset-0 opacity-5">
             <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00ek0yNCAzMmMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAx,Ljc5IDQgNCA0IDQtMS43OSA0LTR6bTI0IDBjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+');"></div>
         </div>
-        
+
         <div class="container mx-auto px-4 relative z-10">
             <!-- Service 1: Digital Marketing Strategy -->
             <div class="flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden mb-12 transition-all duration-300 hover:shadow-2xl" data-aos="fade-up">
@@ -223,7 +226,7 @@
                         <i class="fas fa-chart-pie"></i>
                     </div>
                 </div>
-                
+
                 <!-- Right content area -->
                 <div class="w-full md:w-2/3 p-8 md:p-12">
                     <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Digital Marketing Strategy</h2>
@@ -250,7 +253,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- Service 2: SEO -->
             <div class="flex flex-col md:flex-row-reverse items-center bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden mb-12 transition-all duration-300 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
                 <!-- Right image/icon area -->
@@ -259,7 +262,7 @@
                         <i class="fas fa-search"></i>
                     </div>
                 </div>
-                
+
                 <!-- Left content area -->
                 <div class="w-full md:w-2/3 p-8 md:p-12">
                     <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Search Engine Optimization (SEO)</h2>
@@ -286,7 +289,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- Service 3: PPC -->
             <div class="flex flex-col md:flex-row items-center bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden mb-12 transition-all duration-300 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
                 <!-- Left image/icon area -->
@@ -295,7 +298,7 @@
                         <i class="fas fa-ad"></i>
                     </div>
                 </div>
-                
+
                 <!-- Right content area -->
                 <div class="w-full md:w-2/3 p-8 md:p-12">
                     <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Pay-Per-Click (PPC) Advertising</h2>
@@ -341,7 +344,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Content Marketing & Creation -->
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
                     <div class="h-24 bg-gradient-to-r from-secondary-500 to-secondary-700 flex items-center justify-center">
@@ -358,7 +361,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Analytics & Reporting -->
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="500">
                     <div class="h-24 bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center">
@@ -382,7 +385,7 @@
     <section class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
         <!-- Background decorations -->
         <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-gray-50 to-transparent dark:from-gray-800/50 dark:to-transparent -z-10"></div>
-        
+
         <div class="container mx-auto px-4">
             <!-- Section header -->
             <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
@@ -396,14 +399,14 @@
                     Real results from our innovative digital marketing strategies
                 </p>
             </div>
-            
+
             <!-- Case study card -->
             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-100 dark:border-gray-700" data-aos="fade-up">
                 <!-- Case study header with gradient -->
                 <div class="bg-gradient-to-r from-primary-600 to-secondary-600 py-6 px-8">
                     <h3 class="text-xl md:text-2xl font-bold text-white">Client: [Client Name] - E-commerce Growth Initiative</h3>
                 </div>
-                
+
                 <!-- Case study content -->
                 <div class="p-8 md:p-10">
                     <div class="grid md:grid-cols-5 gap-10">
@@ -421,7 +424,7 @@
                                     [Client Name] was struggling with low website traffic, poor conversion rates, and ineffective digital marketing campaigns. Their e-commerce platform was experiencing a high cart abandonment rate of 78%, and their cost per acquisition was unsustainably high at $67 per customer.
                                 </p>
                             </div>
-                            
+
                             <!-- Solution section -->
                             <div class="mb-8">
                                 <h4 class="text-lg font-bold mb-3 flex items-center dark:text-white">
@@ -452,7 +455,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <!-- Results section -->
                             <div>
                                 <h4 class="text-lg font-bold mb-3 flex items-center dark:text-white">
@@ -484,7 +487,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Right image/chart area (2/5 width) -->
                         <div class="md:col-span-2 flex items-center">
                             <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl w-full h-full flex items-center justify-center">
@@ -499,7 +502,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Case study footer with CTA -->
                 <div class="bg-gray-50 dark:bg-gray-700/50 py-6 px-8 flex flex-col md:flex-row justify-between items-center">
                     <div class="mb-4 md:mb-0">
@@ -523,7 +526,7 @@
             <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
         </div>
-        
+
         <!-- Content -->
         <div class="container mx-auto px-4 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between">
@@ -540,7 +543,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Modern Footer with advanced styling -->
     <footer class="bg-gray-900 text-white relative">
         <!-- Footer top with waves effect -->
@@ -549,7 +552,7 @@
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
             </svg>
         </div>
-        
+
         <!-- Main footer content -->
         <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
@@ -579,7 +582,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Quick links columns -->
                 <div class="md:col-span-2">
                     <h3 class="text-lg font-bold mb-6 relative inline-block">
@@ -593,7 +596,7 @@
                         <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="md:col-span-2">
                     <h3 class="text-lg font-bold mb-6 relative inline-block">
                         Resources
@@ -606,7 +609,7 @@
                         <li><a href="../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact info column -->
                 <div class="md:col-span-4">
                     <h3 class="text-lg font-bold mb-6 relative inline-block">
@@ -649,7 +652,7 @@
                             </div>
                         </li>
                     </ul>
-                    
+
                     <!-- Newsletter signup -->
                     <div class="mt-8">
                         <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
@@ -662,7 +665,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Bottom bar -->
             <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
@@ -682,11 +685,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
-    
+
     <!-- AOS Animation Init -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/chatbot.js"></script>
+    <script src="../js/simple-chatbot.js"></script>
     <script>
         // Initialize AOS animations
         AOS.init({
@@ -695,20 +698,20 @@
             once: true,
             mirror: false
         });
-        
+
         // Check for dark mode preference
         document.addEventListener('alpine:init', () => {
             if (localStorage.getItem('darkMode') === 'true') {
                 document.querySelector('body').__x.$data.darkMode = true;
             }
         });
-        
+
         // Progress bar functionality
         window.addEventListener('scroll', function() {
             const totalHeight = document.body.scrollHeight - window.innerHeight;
             const progress = (window.pageYOffset / totalHeight) * 100;
             document.getElementById('progress-bar').style.width = progress + '%';
-            
+
             // Header style change on scroll
             const header = document.getElementById('main-header');
             if (window.scrollY > 50) {
@@ -718,7 +721,7 @@
                 header.classList.add('py-4');
                 header.classList.remove('py-2');
             }
-            
+
             // Back to top button visibility
             const backToTopButton = document.getElementById('back-to-top');
             if (window.scrollY > 300) {
@@ -729,7 +732,7 @@
                 backToTopButton.classList.remove('opacity-100');
             }
         });
-        
+
         // Back to top functionality
         document.getElementById('back-to-top').addEventListener('click', function() {
             window.scrollTo({

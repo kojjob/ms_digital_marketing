@@ -13,47 +13,47 @@
     <meta property="og:url" content="https://www.msdigitalmarketing.com/pages/contact.html">
     <meta property="og:image" content="https://www.msdigitalmarketing.com/images/og-image.jpg">
     <title>Contact - MS Digital Marketing Agency</title>
-    
+
     <!-- Preconnect to resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind-config.js"></script>
-    
+
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../images/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/logos/logo-dark.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="../images/logos/logo-dark.jpeg">
     <link rel="manifest" href="../site.webmanifest">
-    
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
     <!-- Progress bar -->
     <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
-    
-    <!-- Header with glass morphism effect -->    
+
+    <!-- Header with glass morphism effect -->
     <header class="bg-white/90 dark:bg-dark/90 backdrop-blur-md shadow-md sticky top-0 z-40 py-4 transition-all duration-300" id="main-header">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <!-- Logo -->                
+                <!-- Logo -->
                 <div class="logo flex items-center">
                     <a href="../index.html" class="flex items-center">
                         <span class="bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold py-1 px-2 rounded-md mr-2">MS</span>
                         <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
                     </a>
                 </div>
-                
-                <!-- Desktop Navigation -->                
+
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:block" aria-label="Main Navigation">
                     <ul class="flex">
                         <li class="group relative mx-1">
@@ -100,11 +100,11 @@
                         </li>
                     </ul>
                 </nav>
-                
-                <!-- Right side - Dark mode toggle, social, and mobile menu button -->                
+
+                <!-- Right side - Dark mode toggle, social, and mobile menu button -->
                 <div class="flex items-center">
-                    <!-- Dark Mode Toggle -->                    
-                    <button 
+                    <!-- Dark Mode Toggle -->
+                    <button
                         @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
                         class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
                         aria-label="Toggle Dark Mode"
@@ -112,23 +112,23 @@
                         <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
-                    
-                    <!-- Social Icons - Only show on desktop -->                    
+
+                    <!-- Social Icons - Only show on desktop -->
                     <div class="hidden md:flex items-center mr-4">
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
-                    
-                    <!-- Contact Button - Only show on desktop -->                    
+
+                    <!-- Contact Button - Only show on desktop -->
                     <a href="contact.html" class="hidden md:block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
                         Get in Touch
                     </a>
-                    
-                    <!-- Mobile Menu Button -->                    
-                    <button 
-                        @click="mobileMenuOpen = !mobileMenuOpen" 
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        @click="mobileMenuOpen = !mobileMenuOpen"
                         class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
                         aria-expanded="false"
                         aria-label="Open Menu"
@@ -138,16 +138,16 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Mobile Menu -->            
-            <div 
-                x-show="mobileMenuOpen" 
-                x-transition:enter="transition ease-out duration-200" 
-                x-transition:enter-start="opacity-0 -translate-y-4" 
-                x-transition:enter-end="opacity-100 translate-y-0" 
-                x-transition:leave="transition ease-in duration-150" 
-                x-transition:leave-start="opacity-100 translate-y-0" 
-                x-transition:leave-end="opacity-0 -translate-y-4" 
+
+            <!-- Mobile Menu -->
+            <div
+                x-show="mobileMenuOpen"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
                 class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
             >
                 <nav class="px-4 py-2">
@@ -172,7 +172,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Accessible skip to content link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:bg-primary-600 focus:text-white focus:p-4 focus:z-50">
         Skip to content
@@ -206,52 +206,52 @@
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name *</label>
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        name="name" 
-                                        required 
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
                                         class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                     >
                                 </div>
                                 <div>
                                     <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        name="email" 
-                                        required 
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
                                         class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                     >
                                 </div>
                             </div>
-                            
+
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
-                                    <input 
-                                        type="tel" 
-                                        id="phone" 
-                                        name="phone" 
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
                                         class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                     >
                                 </div>
                                 <div>
                                     <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Company</label>
-                                    <input 
-                                        type="text" 
-                                        id="company" 
-                                        name="company" 
+                                    <input
+                                        type="text"
+                                        id="company"
+                                        name="company"
                                         class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                     >
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <label for="service" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">What service are you interested in?</label>
-                                <select 
-                                    id="service" 
-                                    name="service" 
+                                <select
+                                    id="service"
+                                    name="service"
                                     class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                 >
                                     <option value="">Select a service</option>
@@ -262,34 +262,34 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
-                            
+
                             <div>
                                 <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message *</label>
-                                <textarea 
-                                    id="message" 
-                                    name="message" 
-                                    rows="5" 
-                                    required 
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    required
                                     class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white resize-none"
                                 ></textarea>
                             </div>
-                            
+
                             <div class="flex items-center">
-                                <input 
-                                    type="checkbox" 
-                                    id="consent" 
-                                    name="consent" 
-                                    required 
+                                <input
+                                    type="checkbox"
+                                    id="consent"
+                                    name="consent"
+                                    required
                                     class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                                 >
                                 <label for="consent" class="ml-2 block text-sm text-gray-600 dark:text-gray-400">
                                     I agree to the <a href="../legal/privacy-policy.html" class="text-primary-600 dark:text-primary-400 hover:underline">Privacy Policy</a> and consent to being contacted regarding my inquiry.
                                 </label>
                             </div>
-                            
+
                             <div>
-                                <button 
-                                    type="submit" 
+                                <button
+                                    type="submit"
                                     class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
                                 >
                                     <i class="far fa-paper-plane mr-2"></i>Send Message
@@ -298,13 +298,13 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <!-- Contact Information -->
                 <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
                     <!-- Contact Info Card -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
                         <h2 class="text-2xl font-bold mb-6 dark:text-white">Contact Information</h2>
-                        
+
                         <div class="space-y-6">
                             <!-- Email -->
                             <div class="flex items-start">
@@ -316,7 +316,7 @@
                                     <a href="mailto:contact@msdigitalmarketing.com" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">msdigitalmarketingagency90@gmail.com</a>
                                 </div>
                             </div>
-                            
+
                             <!-- Phone -->
                             <div class="flex items-start">
                                 <div class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4 flex-shrink-0">
@@ -324,10 +324,10 @@
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-1 dark:text-white">Phone</h3>
-                                    <a href="tel:+1XXXXXXXXXX" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">+1 (XXX) XXX-XXXX</a>
+                                    <a href="tel:+1XXXXXXXXXX" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">+233 (XXX) XXX-XXXX</a>
                                 </div>
                             </div>
-                            
+
                             <!-- Office -->
                             <div class="flex items-start">
                                 <div class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4 flex-shrink-0">
@@ -335,10 +335,10 @@
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-1 dark:text-white">Office</h3>
-                                    <p class="text-gray-600 dark:text-gray-300">[Insert Address Here]</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Kumasi, Ghana</p>
                                 </div>
                             </div>
-                            
+
                             <!-- Hours -->
                             <div class="flex items-start">
                                 <div class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-4 flex-shrink-0">
@@ -352,7 +352,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Social Media Box -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
                         <h3 class="text-lg font-semibold mb-4 dark:text-white">Follow Us</h3>
@@ -376,15 +376,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Map -->
             <div class="mt-16 rounded-xl overflow-hidden shadow-xl h-96 border border-gray-100 dark:border-gray-700" data-aos="fade-up">
                 <!-- OpenStreetMap embedded iframe approach (simpler and more reliable) -->
                 <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-73.99127006530763%2C40.75363424080862%2C-73.97937178611757%2C40.7636443163519&amp;layer=mapnik&amp;marker=40.75863937138879%2C-73.98532092571259"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-1.6400146484375002%2C6.6463138939964075%2C-1.5631103515625%2C6.7231463914614935&amp;layer=mapnik&amp;marker=6.684736328125%2C-1.6015625"
                     style="border: none; width: 100%; height: 100%;">
                 </iframe>
-                <a href="https://www.openstreetmap.org/?mlat=40.7586&amp;mlon=-73.9853#map=17/40.7586/-73.9853" target="_blank" class="absolute bottom-2 right-2 text-xs bg-white/80 dark:bg-gray-800/80 px-2 py-1 rounded text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors z-10">
+                <a href="https://www.openstreetmap.org/?mlat=6.6847&amp;mlon=-1.6016#map=14/6.6847/-1.6016" target="_blank" class="absolute bottom-2 right-2 text-xs bg-white/80 dark:bg-gray-800/80 px-2 py-1 rounded text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors z-10">
                     View Larger Map
                 </a>
             </div>
@@ -399,7 +399,7 @@
             <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white opacity-10 rounded-full"></div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDUwIEwxNTAgMTAwIEwxMDAgMTUwIEw1MCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=')] opacity-20"></div>
         </div>
-        
+
         <div class="container mx-auto px-4 relative z-10 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display" data-aos="fade-up">Book a Free Strategy Session Today</h2>
             <p class="text-xl text-white/90 max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">Learn how our digital marketing solutions can transform your business and accelerate your growth.</p>
@@ -418,7 +418,7 @@
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
             </svg>
         </div>
-        
+
         <!-- Main footer content -->
         <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
@@ -448,7 +448,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Quick links columns -->
                 <div class="md:col-span-2">
                     <h3 class="text-lg font-bold mb-6 relative inline-block">
@@ -462,7 +462,7 @@
                         <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Portfolio</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="md:col-span-2">
                     <h3 class="text-lg font-bold mb-6 relative inline-block">
                         Resources
@@ -475,7 +475,7 @@
                         <li><a href="../legal/terms-of-service.html" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>Terms of Service</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact info column -->
                 <div class="md:col-span-4">
                     <h3 class="text-lg font-bold mb-6 relative inline-block">
@@ -517,7 +517,7 @@
                             </div>
                         </li>
                     </ul>
-                    
+
                     <!-- Newsletter signup -->
                     <div class="mt-8">
                         <h4 class="text-base font-bold mb-3">Subscribe to our newsletter</h4>
@@ -530,7 +530,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Bottom bar -->
             <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
@@ -546,16 +546,16 @@
 
     <!-- AOS Animation Init -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Back to top button -->
     <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
-    
+
     <script src="../js/main.js"></script>
-    <script src="../js/chatbot.js"></script>
+    <script src="../js/simple-chatbot.js"></script>
     <script>
         // Initialize AOS animations
         AOS.init({
@@ -564,20 +564,20 @@
             once: true,
             mirror: false
         });
-        
+
         // Check for dark mode preference
         document.addEventListener('alpine:init', () => {
             if (localStorage.getItem('darkMode') === 'true') {
                 document.querySelector('body').__x.$data.darkMode = true;
             }
         });
-        
+
         // Progress bar functionality
         window.addEventListener('scroll', function() {
             const totalHeight = document.body.scrollHeight - window.innerHeight;
             const progress = (window.pageYOffset / totalHeight) * 100;
             document.getElementById('progress-bar').style.width = progress + '%';
-            
+
             // Header style change on scroll
             const header = document.getElementById('main-header');
             if (window.scrollY > 50) {
@@ -587,7 +587,7 @@
                 header.classList.add('py-4');
                 header.classList.remove('py-2');
             }
-            
+
             // Back to top button visibility
             const backToTopButton = document.getElementById('back-to-top');
             if (window.scrollY > 300) {
@@ -598,7 +598,7 @@
                 backToTopButton.classList.remove('opacity-100');
             }
         });
-        
+
         // Back to top functionality
         document.getElementById('back-to-top').addEventListener('click', function() {
             window.scrollTo({
@@ -606,21 +606,21 @@
                 behavior: 'smooth'
             });
         });
-        
+
         // Contact form handling for static sites
         document.addEventListener('DOMContentLoaded', function() {
             const contactForm = document.getElementById('contact-form');
-            
+
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     // If this is a static site without PHP, we'll need to handle the form submission with JavaScript
                     // Check if we're on a static hosting platform
-                    if (window.location.hostname.includes('github.io') || 
-                        window.location.hostname.includes('netlify.app') || 
+                    if (window.location.hostname.includes('github.io') ||
+                        window.location.hostname.includes('netlify.app') ||
                         window.location.hostname.includes('vercel.app')) {
-                        
+
                         e.preventDefault(); // Prevent the default form submission
-                        
+
                         // Get form values
                         const name = document.getElementById('name').value;
                         const email = document.getElementById('email').value;
@@ -628,20 +628,20 @@
                         const company = document.getElementById('company').value;
                         const service = document.getElementById('service').value;
                         const message = document.getElementById('message').value;
-                        
+
                         // Basic validation
                         if (!name || !email || !message) {
                             alert('Please fill out all required fields (Name, Email, and Message).');
                             return;
                         }
-                        
+
                         // Email validation
                         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                         if (!emailRegex.test(email)) {
                             alert('Please enter a valid email address.');
                             return;
                         }
-                        
+
                         // Options for static form handling:
                         // 1. Send to a service like Formspree
                         const formData = new FormData();
@@ -651,7 +651,7 @@
                         formData.append('company', company);
                         formData.append('service', service);
                         formData.append('message', message);
-                        
+
                         // Replace 'your-formspree-endpoint' with your actual Formspree form ID
                         // Example: fetch('https://formspree.io/f/xrgwgpze', {
                         fetch('https://formspree.io/f/your-formspree-endpoint', {
