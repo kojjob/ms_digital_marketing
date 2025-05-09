@@ -24,8 +24,8 @@
     <script src="../js/tailwind-config.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../images/logos/logo-dark.jpeg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="../images/logos/logo-dark.jpeg">
+    <link rel="shortcut icon" href="../images/logos/logo-white.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="../images/logos/logo-white.jpeg">
     <link rel="manifest" href="../site.webmanifest">
 
     <!-- Font Awesome for icons -->
@@ -36,8 +36,11 @@
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Simple Theme Toggle -->
+    <script src="../js/simple-theme-toggle.js"></script>
 </head>
-<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: $store.theme.dark, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
     <!-- Progress bar -->
     <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
 
@@ -48,7 +51,7 @@
                 <!-- Logo -->
                 <div class="logo flex items-center">
                     <a href="../index.html" class="flex items-center">
-                        <img src="../images/logos/logo-dark.jpeg" alt="MS Digital Marketing" class="w-10 h-10 rounded-md mr-2 object-cover">
+                        <img src="../images/logos/logo-white.jpeg" alt="MS Digital Marketing" class="w-10 h-10 rounded-md mr-2 object-cover">
                         <h1 class="text-xl font-display font-bold tracking-tight dark:text-white">Digital Marketing</h1>
                     </a>
                 </div>
@@ -104,7 +107,7 @@
                 <div class="flex items-center">
                     <!-- Dark Mode Toggle -->
                     <button
-                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        @click="$store.theme.toggle(); darkMode = $store.theme.dark"
                         class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
                         aria-label="Toggle Dark Mode"
                     >
@@ -114,10 +117,11 @@
 
                     <!-- Social Icons - Only show on desktop -->
                     <div class="hidden md:flex items-center mr-4">
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61573003587475" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@msdigitalmarketingagency?_t=ZM-8w4ulliyKbn&_r=1" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/home" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/107174032/admin/dashboard/" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-linkedin"></i></a>
                     </div>
 
                     <!-- Contact Button - Only show on desktop -->
@@ -192,7 +196,7 @@
         </div>
     </section>
 
-    <section class="py-20 relative overflow-hidden">
+    <section class="py-20 bg-white dark:bg-gray-800 relative overflow-hidden">
         <!-- Background decorations -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 dark:bg-primary-900/20 rounded-full -z-10 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-100/50 dark:bg-secondary-900/20 rounded-full -z-10 blur-3xl"></div>
@@ -227,7 +231,8 @@
                             <div class="p-8 flex items-center justify-center h-full">
                                 <div class="text-center">
                                     <div class="inline-flex items-center justify-center w-24 h-24 rounded-full mb-4 overflow-hidden">
-                                        <img src="../images/logos/logo-dark.jpeg" alt="MS Digital Marketing" class="w-full h-full object-cover">
+                                        <img src="../images/logos/logo-white.jpeg" alt="MS Digital Marketing" class="w-full h-full object-cover dark:hidden">
+                                        <img src="../images/logos/logo-white.jpeg" alt="MS Digital Marketing" class="w-full h-full object-cover hidden dark:block">
                                     </div>
                                     <div class="text-xl font-bold dark:text-white">Established 2020</div>
                                     <p class="text-gray-500 dark:text-gray-400">Transforming Digital Presence</p>
@@ -299,7 +304,7 @@
                     <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-xl p-6 text-center">
                         <!-- Image container with effect -->
                         <div class="relative mx-auto w-40 h-40 mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 dark:ring-primary-900/30 group-hover:ring-primary-500 transition-all duration-300">
-                            <img src="../images/team/amanda-dufie.png" alt="Amanda Dufie" class="w-full h-full object-cover">
+                            <img src="../images/team/amanda-dufie.jpeg" alt="Amanda Dufie" class="w-full h-full object-cover">
 
                             <!-- Hover overlay with social icons -->
                             <div class="absolute inset-0 bg-primary-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -333,7 +338,8 @@
                     <div class="relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-xl p-6 text-center">
                         <!-- Image container with effect -->
                         <div class="relative mx-auto w-40 h-40 mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 dark:ring-primary-900/30 group-hover:ring-primary-500 transition-all duration-300 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                            <span class="text-4xl font-bold text-gray-400 dark:text-gray-500">JD</span>
+                            <img src="../images/team/Bari Abdul-Manaf Ahmed.jpeg" alt="Amanda Dufie" class="w-full h-full object-cover">
+
 
                             <!-- Hover overlay with social icons -->
                             <div class="absolute inset-0 bg-primary-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -349,14 +355,14 @@
                         </div>
 
                         <!-- Team member info -->
-                        <h3 class="text-xl font-bold mb-1 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">John Doe</h3>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Bari Abdul-Manaf Ahmed</h3>
                         <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Creative Director</p>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Award-winning designer with expertise in brand identity, UI/UX, and creative campaign development.</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Accomplished Web Developer specializing in building responsive, high-performance web applications and interactive user experiences using modern technologies..</p>
 
                         <!-- Skills badges -->
                         <div class="flex flex-wrap justify-center gap-2">
-                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Design</span>
-                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Branding</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">React</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">Frontend</span>
                             <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">UX/UI</span>
                         </div>
                     </div>
@@ -769,12 +775,7 @@
             mirror: false
         });
 
-        // Check for dark mode preference
-        document.addEventListener('alpine:init', () => {
-            if (localStorage.getItem('darkMode') === 'true') {
-                document.querySelector('body').__x.$data.darkMode = true;
-            }
-        });
+        // Dark mode is now handled by theme-manager.js
 
         // Progress bar functionality
         window.addEventListener('scroll', function() {

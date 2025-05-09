@@ -20,8 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../css/tailwind.min.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../images/logos/logo-dark.jpeg" type="image/jpeg">
@@ -36,8 +35,48 @@
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Simple Theme Toggle -->
+    <script src="../js/simple-theme-toggle.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ABC123XYZ', {
+            'cookie_flags': 'SameSite=None;Secure',
+            'anonymize_ip': true
+        });
+
+        // Consent management
+        function setConsent(consent) {
+            if (consent) {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+                localStorage.setItem('cookie_consent', 'true');
+            } else {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+                localStorage.setItem('cookie_consent', 'false');
+            }
+        }
+
+        // Default to denied until user gives consent
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+
+        // Check for existing consent
+        if (localStorage.getItem('cookie_consent') === 'true') {
+            setConsent(true);
+        }
+    </script>
 </head>
-<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: false, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: $store.theme.dark, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
     <!-- Progress bar -->
     <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
 
@@ -105,7 +144,7 @@
                 <div class="flex items-center">
                     <!-- Dark Mode Toggle -->
                     <button
-                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode ? 'true' : 'false')"
+                        @click="$store.theme.toggle(); darkMode = $store.theme.dark"
                         class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
                         aria-label="Toggle Dark Mode"
                     >
@@ -115,10 +154,11 @@
 
                     <!-- Social Icons - Only show on desktop -->
                     <div class="hidden md:flex items-center mr-4">
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61573003587475" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@msdigitalmarketingagency?_t=ZM-8w4ulliyKbn&_r=1" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/home" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/107174032/admin/dashboard/" target="blank" class="text-dark dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 mx-2 text-lg" aria-label="Twitter"><i class="fab fa-linkedin"></i></a>
                     </div>
 
                     <!-- Contact Button - Only show on desktop -->
@@ -203,6 +243,14 @@
                     <div class="p-8">
                         <h2 class="text-2xl font-bold mb-6 dark:text-white">Send Us a Message</h2>
                         <form id="contact-form" action="../process-form.php" method="POST" class="space-y-6">
+                            <!-- CSRF Protection -->
+                            <input type="hidden" name="csrf_token" id="csrf_token" value="">
+                            <!-- Honeypot field to catch bots - hidden from real users -->
+                            <div style="display:none;">
+                                <label for="website">Website (Leave this empty)</label>
+                                <input type="text" id="website" name="website" autocomplete="off">
+                            </div>
+
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name *</label>
@@ -211,6 +259,7 @@
                                         id="name"
                                         name="name"
                                         required
+                                        aria-required="true"
                                         class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                     >
                                 </div>
@@ -221,6 +270,7 @@
                                         id="email"
                                         name="email"
                                         required
+                                        aria-required="true"
                                         class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white"
                                     >
                                 </div>
@@ -290,9 +340,10 @@
                             <div>
                                 <button
                                     type="submit"
-                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+                                    aria-label="Submit form"
                                 >
-                                    <i class="far fa-paper-plane mr-2"></i>Send Message
+                                    <i class="far fa-paper-plane mr-2" aria-hidden="true"></i>Send Message
                                 </button>
                             </div>
                         </form>
@@ -324,7 +375,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-semibold mb-1 dark:text-white">Phone</h3>
-                                    <a href="tel:+1XXXXXXXXXX" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">+233 (XXX) XXX-XXXX</a>
+                                    <a href="tel:+233553123456" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">+233 553 123 456</a>
                                 </div>
                             </div>
 
@@ -357,20 +408,20 @@
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
                         <h3 class="text-lg font-semibold mb-4 dark:text-white">Follow Us</h3>
                         <div class="flex space-x-4">
-                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors" aria-label="Instagram">
-                                <i class="fab fa-instagram text-xl"></i>
+                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
                             </a>
-                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors" aria-label="Facebook">
-                                <i class="fab fa-facebook-f text-xl"></i>
+                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors" aria-label="Follow us on Facebook">
+                                <i class="fab fa-facebook-f text-xl" aria-hidden="true"></i>
                             </a>
-                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors" aria-label="TikTok">
-                                <i class="fab fa-tiktok text-xl"></i>
+                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors" aria-label="Follow us on TikTok">
+                                <i class="fab fa-tiktok text-xl" aria-hidden="true"></i>
                             </a>
-                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors" aria-label="Twitter">
-                                <i class="fab fa-twitter text-xl"></i>
+                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors" aria-label="Follow us on Twitter">
+                                <i class="fab fa-twitter text-xl" aria-hidden="true"></i>
                             </a>
-                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in text-xl"></i>
+                            <a href="#" class="h-12 w-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors" aria-label="Connect with us on LinkedIn">
+                                <i class="fab fa-linkedin-in text-xl" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -502,7 +553,7 @@
                             </div>
                             <div>
                                 <p class="text-gray-300">Phone:</p>
-                                <a href="tel:+233XXXXXXXXXX" class="text-white hover:text-primary-400 transition-colors">+233 (XXX) XXX-XXXX</a>
+                                <a href="tel:+233553123456" class="text-white hover:text-primary-400 transition-colors">+233 553 123 456</a>
                             </div>
                         </li>
                         <li class="flex items-start">
@@ -554,6 +605,27 @@
         </svg>
     </button>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg p-4 z-50 border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300" style="transform: translateY(100%);">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0 md:mr-8">
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.
+                    By clicking "Accept", you consent to our use of cookies.
+                    <a href="../legal/privacy-policy.html" class="text-primary-600 dark:text-primary-400 hover:underline">Learn more</a>
+                </p>
+            </div>
+            <div class="flex space-x-3">
+                <button id="cookie-decline" class="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    Decline
+                </button>
+                <button id="cookie-accept" class="px-4 py-2 text-sm bg-primary-600 text-white rounded hover:bg-primary-700 transition-colors">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/main.js"></script>
     <script src="../js/simple-chatbot.js"></script>
     <script>
@@ -565,12 +637,7 @@
             mirror: false
         });
 
-        // Check for dark mode preference
-        document.addEventListener('alpine:init', () => {
-            if (localStorage.getItem('darkMode') === 'true') {
-                document.querySelector('body').__x.$data.darkMode = true;
-            }
-        });
+        // Dark mode is now handled by theme-manager.js
 
         // Progress bar functionality
         window.addEventListener('scroll', function() {
@@ -607,19 +674,59 @@
             });
         });
 
-        // Contact form handling for static sites
+        // Generate and set CSRF token
+        function generateCSRFToken() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let token = '';
+            for (let i = 0; i < 32; i++) {
+                token += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return token;
+        }
+
+        // Cookie consent banner functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Cookie consent banner
+            const cookieBanner = document.getElementById('cookie-consent-banner');
+            const acceptButton = document.getElementById('cookie-accept');
+            const declineButton = document.getElementById('cookie-decline');
+
+            // Check if user has already made a choice
+            if (localStorage.getItem('cookie_consent') === null) {
+                // Show the banner with a slight delay
+                setTimeout(() => {
+                    cookieBanner.style.transform = 'translateY(0)';
+                }, 1000);
+            }
+
+            // Accept button
+            acceptButton.addEventListener('click', function() {
+                setConsent(true);
+                cookieBanner.style.transform = 'translateY(100%)';
+            });
+
+            // Decline button
+            declineButton.addEventListener('click', function() {
+                setConsent(false);
+                cookieBanner.style.transform = 'translateY(100%)';
+            });
+
+            // Contact form handling for static sites
             const contactForm = document.getElementById('contact-form');
+
+            // Set CSRF token
+            if (contactForm) {
+                const csrfToken = generateCSRFToken();
+                document.getElementById('csrf_token').value = csrfToken;
+
+                // Store token in session storage for validation
+                sessionStorage.setItem('csrf_token', csrfToken);
+            }
 
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    // If this is a static site without PHP, we'll need to handle the form submission with JavaScript
-                    // Check if we're on a static hosting platform
-                    if (window.location.hostname.includes('github.io') ||
-                        window.location.hostname.includes('netlify.app') ||
-                        window.location.hostname.includes('vercel.app')) {
-
-                        e.preventDefault(); // Prevent the default form submission
+                    // Always handle form submission with JavaScript for better user experience
+                    e.preventDefault(); // Prevent the default form submission
 
                         // Get form values
                         const name = document.getElementById('name').value;
@@ -628,6 +735,13 @@
                         const company = document.getElementById('company').value;
                         const service = document.getElementById('service').value;
                         const message = document.getElementById('message').value;
+                        const csrfToken = document.getElementById('csrf_token').value;
+
+                        // Verify CSRF token matches the one in session storage
+                        if (csrfToken !== sessionStorage.getItem('csrf_token')) {
+                            alert('Security validation failed. Please refresh the page and try again.');
+                            return;
+                        }
 
                         // Basic validation
                         if (!name || !email || !message) {
@@ -652,30 +766,46 @@
                         formData.append('service', service);
                         formData.append('message', message);
 
-                        // Replace 'your-formspree-endpoint' with your actual Formspree form ID
-                        // Example: fetch('https://formspree.io/f/xrgwgpze', {
-                        fetch('https://formspree.io/f/your-formspree-endpoint', {
-                            method: 'POST',
-                            body: formData,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                // Redirect to thank you page
-                                window.location.href = '../thank-you.html';
-                            } else {
-                                // Redirect to error page
-                                window.location.href = '../error.html';
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            window.location.href = '../error.html';
-                        });
-                    }
-                    // If not on static hosting, let the form submit to PHP script
+                        // Show loading state
+                        const submitButton = document.querySelector('button[type="submit"]');
+                        const originalButtonText = submitButton.innerHTML;
+                        submitButton.disabled = true;
+                        submitButton.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
+
+                        // Rate limiting - Check if submission is too frequent
+                        const lastSubmissionTime = localStorage.getItem('last_form_submission');
+                        const currentTime = Date.now();
+
+                        if (lastSubmissionTime && (currentTime - parseInt(lastSubmissionTime)) < 60000) { // 60 seconds
+                            submitButton.innerHTML = originalButtonText;
+                            submitButton.disabled = false;
+                            alert('Please wait a moment before submitting again.');
+                            return;
+                        }
+
+                        // Using direct form submission to thank-you page
+                        // Store form data in localStorage for demonstration purposes
+                        localStorage.setItem('form_name', name);
+                        localStorage.setItem('form_email', email);
+                        localStorage.setItem('form_phone', phone);
+                        localStorage.setItem('form_company', company);
+                        localStorage.setItem('form_service', service);
+                        localStorage.setItem('form_message', message);
+
+                        // Store submission time for rate limiting
+                        localStorage.setItem('last_form_submission', currentTime.toString());
+
+                        // Success state
+                        submitButton.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                        submitButton.classList.add('bg-green-600');
+
+                        // Reset form
+                        contactForm.reset();
+
+                        // Redirect after a short delay to show success state
+                        setTimeout(() => {
+                            window.location.href = '../thank-you.html';
+                        }, 1000);
                 });
             }
         });

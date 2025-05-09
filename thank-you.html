@@ -5,127 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Thank you for contacting MS Digital Marketing Agency. We'll be in touch soon.">
     <title>Thank You - MS Digital Marketing Agency</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .thank-you-container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin: 40px auto;
-            max-width: 800px;
-            text-align: center;
-        }
-        
-        .thank-you-icon {
-            font-size: 4rem;
-            color: #0077cc;
-            margin-bottom: 20px;
-        }
-        
-        .thank-you-container h2 {
-            margin-bottom: 20px;
-        }
-        
-        .thank-you-container p {
-            margin-bottom: 30px;
-        }
-    </style>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Simple Theme Toggle -->
+    <script src="js/simple-theme-toggle.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MS Digital Marketing Agency</h1>
+<body class="font-sans bg-light text-dark min-h-screen flex flex-col" x-data="{ darkMode: $store.theme.dark, mobileMenuOpen: false }" :class="darkMode ? 'dark bg-gray-900 text-white' : ''">
+    <!-- Progress bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary-500 z-50 transition-all duration-300" id="progress-bar"></div>
+
+    <!-- Header with navigation -->
+    <header id="main-header" class="bg-white dark:bg-gray-900 sticky top-0 z-40 shadow-sm transition-all duration-300 py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logos/logo-dark.jpeg" alt="MS Digital Marketing" class="h-10 w-10 rounded-md object-cover dark:hidden">
+                    <img src="images/logos/logo-white.jpeg" alt="MS Digital Marketing" class="h-10 w-10 rounded-md object-cover hidden dark:block">
+                    <span class="ml-2 text-xl font-bold font-display dark:text-white">Digital Marketing</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center">
+                    <ul class="flex">
+                        <li class="group relative mx-1">
+                            <a href="index.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Home
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="pages/about.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                About Us
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="pages/services.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Services
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                        <li class="group relative mx-1">
+                            <a href="pages/contact.html" class="block px-3 py-2 text-dark dark:text-white hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                                Contact
+                                <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Right side - Dark mode toggle and mobile menu button -->
+                <div class="flex items-center">
+                    <!-- Dark Mode Toggle -->
+                    <button
+                        @click="$store.theme.toggle(); darkMode = $store.theme.dark"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors mr-2"
+                        aria-label="Toggle Dark Mode"
+                    >
+                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg x-show="darkMode" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors ml-2"
+                        aria-expanded="false"
+                        aria-label="Open Menu"
+                    >
+                        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About Us</a></li>
-                    <li><a href="pages/services.html">Services</a></li>
-                    <li><a href="pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="pages/blog.html">Blog</a></li>
-                    <li><a href="pages/faq.html">FAQ</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+
+            <!-- Mobile Menu -->
+            <div
+                x-show="mobileMenuOpen"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
+                class="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-4 overflow-hidden"
+            >
+                <nav class="px-4 py-2">
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Home</a></li>
+                        <li><a href="pages/about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">About Us</a></li>
+                        <li><a href="pages/services.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Services</a></li>
+                        <li><a href="pages/contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-dark dark:text-white font-medium">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Thank You</h1>
+    <!-- Thank You Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-primary-500 text-white relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-0 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-white/10 rounded-full filter blur-3xl"></div>
         </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="thank-you-container">
-                <div class="thank-you-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h2>Your Message Has Been Sent!</h2>
-                <p>Thank you for reaching out to MS Digital Marketing Agency. We have received your inquiry and will respond to you shortly.</p>
-                <p>Our team typically responds within 24-48 business hours.</p>
-                <a href="index.html" class="cta-button">Return to Homepage</a>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display">Thank You!</h1>
+                <p class="text-lg text-white/90 max-w-2xl mx-auto">
+                    Your message has been received. We appreciate you reaching out to us.
+                </p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>MS Digital Marketing</h3>
-                    <p>Transform your digital presence with our innovative marketing solutions.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/about.html">About Us</a></li>
-                        <li><a href="pages/services.html">Services</a></li>
-                        <li><a href="pages/portfolio.html">Portfolio</a></li>
-                        <li><a href="pages/blog.html">Blog</a></li>
-                        <li><a href="pages/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>Email: msdigitalmarketingagency90@gmail.com</p>
-                    <p>Phone: +233 (XXX) XXX-XXXX</p>
-                    <p>Address: Kumasi, Ghana</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- Thank You Content -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 text-center" data-aos="fade-up">
+                    <div class="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-4xl text-primary-600 dark:text-primary-400"></i>
                     </div>
+
+                    <h2 class="text-2xl font-bold mb-4 dark:text-white">Your Message Has Been Sent!</h2>
+
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Thank you for reaching out to MS Digital Marketing Agency. We have received your inquiry and will respond to you shortly.
+                    </p>
+
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Our team typically responds within 24-48 business hours.
+                    </p>
+
+                    <!-- Submission Details -->
+                    <div id="submission-details" class="mt-6 mb-8 text-left bg-gray-50 dark:bg-gray-700/50 p-6 rounded-lg max-w-md mx-auto hidden">
+                        <h3 class="text-lg font-semibold mb-4 dark:text-white">Your Submission Details:</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-700 dark:text-gray-300"><span class="font-medium">Name:</span> <span id="submitted-name"></span></p>
+                            <p class="text-gray-700 dark:text-gray-300"><span class="font-medium">Email:</span> <span id="submitted-email"></span></p>
+                            <p class="text-gray-700 dark:text-gray-300"><span class="font-medium">Phone:</span> <span id="submitted-phone"></span></p>
+                            <p class="text-gray-700 dark:text-gray-300"><span class="font-medium">Company:</span> <span id="submitted-company"></span></p>
+                            <p class="text-gray-700 dark:text-gray-300"><span class="font-medium">Service:</span> <span id="submitted-service"></span></p>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fas fa-home mr-2"></i>Return to Homepage
+                    </a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
-                <p><a href="legal/privacy-policy.html">Privacy Policy</a> | <a href="legal/terms-of-service.html">Terms of Service</a></p>
+        </div>
+    </section>
+
+    <!-- Modern Footer with advanced styling -->
+    <footer class="bg-gray-900 text-white relative mt-auto">
+        <!-- Footer top with waves effect -->
+        <div class="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-16">
+            <svg class="absolute bottom-0 w-full h-16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" fill="#111827">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,196.44,136.61Z"></path>
+            </svg>
+        </div>
+
+        <!-- Main footer content -->
+        <div class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MS Digital Marketing Agency. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    <a href="legal/privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="legal/terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-primary-600 text-white p-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary-700" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
     <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Dark mode is now handled by theme-manager.js
+
+        // Progress bar functionality
+        window.addEventListener('scroll', function() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+
+            // Header style change on scroll
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('opacity-100');
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Display form submission details from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const submissionDetails = document.getElementById('submission-details');
+            const submittedName = document.getElementById('submitted-name');
+            const submittedEmail = document.getElementById('submitted-email');
+            const submittedPhone = document.getElementById('submitted-phone');
+            const submittedCompany = document.getElementById('submitted-company');
+            const submittedService = document.getElementById('submitted-service');
+
+            // Check if we have form data in localStorage
+            if (localStorage.getItem('form_name')) {
+                // Show the submission details section
+                submissionDetails.classList.remove('hidden');
+
+                // Fill in the details
+                submittedName.textContent = localStorage.getItem('form_name') || 'Not provided';
+                submittedEmail.textContent = localStorage.getItem('form_email') || 'Not provided';
+                submittedPhone.textContent = localStorage.getItem('form_phone') || 'Not provided';
+                submittedCompany.textContent = localStorage.getItem('form_company') || 'Not provided';
+                submittedService.textContent = localStorage.getItem('form_service') || 'Not provided';
+
+                // Clear the form data from localStorage after displaying it
+                setTimeout(() => {
+                    localStorage.removeItem('form_name');
+                    localStorage.removeItem('form_email');
+                    localStorage.removeItem('form_phone');
+                    localStorage.removeItem('form_company');
+                    localStorage.removeItem('form_service');
+                    localStorage.removeItem('form_message');
+                }, 5000); // Clear after 5 seconds
+            }
+        });
+    </script>
 </body>
 </html>

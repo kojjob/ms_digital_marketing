@@ -1,4 +1,3 @@
-// Enhanced Intelligent Chatbot Implementation with Advanced Context Awareness
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded, initializing chatbot...');
 
